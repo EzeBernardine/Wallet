@@ -13,64 +13,30 @@ import Withdraw from "./withdraw";
 import Deposite from "./deposite";
 import Transfer from "./transfer";
 import Wallet from "./wallet";
+import Header from "../../UI_Components/Header";
+import Drawer from "../../UI_Components/Drawer";
 
 const Dashboard = () => {
-  const [draerItem, setDrawerItem] = useState(0);
+  const [drawerItem, setDrawerItem] = useState(0);
+
+  const changeDrawerItem = (item) => setDrawerItem(item);
   return (
     <Styles className="App">
-      <aside>
-        <Flex margin="0 0 50px 0" justify="flex-start">
-          <Link to="./">
-            <Header4 color="#673a1e" bold>
-              Wallet
-            </Header4>
-          </Link>
-        </Flex>
-
-        <div className="drawer">
-          <Header5 color="#673a1e">My Dashbaord</Header5>
-          <ul>
-            <li>
-              <button onClick={() => setDrawerItem(0)}> Overview</button>
-            </li>
-            <li>
-              <button onClick={() => setDrawerItem(1)}> Deposite</button>
-            </li>
-            <li>
-              <button onClick={() => setDrawerItem(2)}> Withdraw</button>
-            </li>
-            <li>
-              <button onClick={() => setDrawerItem(3)}> Transfer</button>
-            </li>
-            <li>
-              <button onClick={() => setDrawerItem(4)}> Wallet</button>
-            </li>
-            {/* <li>Reverse Transaction</li> */}
-            <li>
-              <Link to="/"> Log out</Link>
-            </li>
-          </ul>
-        </div>
-      </aside>
-
       <div>
-        <header>
-          <Flex height="100%" justify="flex-end">
-            <Header4 color="#673a1e"> Welcome</Header4>
-            <Span color="#2c2d2d">Anonymous Obinna</Span>
-          </Flex>
-        </header>
+        <Header />
+
+        <Drawer changeDrawerItem={changeDrawerItem} drawerItem={drawerItem} />
 
         <section>
-          {draerItem === 0 ? (
+          {drawerItem === 0 ? (
             <Overview />
-          ) : draerItem === 1 ? (
+          ) : drawerItem === 1 ? (
             <Withdraw />
-          ) : draerItem === 2 ? (
+          ) : drawerItem === 2 ? (
             <Deposite />
-          ) : draerItem === 3 ? (
+          ) : drawerItem === 3 ? (
             <Transfer />
-          ) : draerItem === 4 ? (
+          ) : drawerItem === 4 ? (
             <Wallet />
           ) : null}
         </section>
