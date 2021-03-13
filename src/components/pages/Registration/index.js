@@ -1,5 +1,5 @@
 import { Styles } from "./styles";
-import { Flex } from "../../UI_Components/Box/styles";
+import { Flex, Grid } from "../../UI_Components/Box/styles";
 import {
   Header2,
   Paragraph,
