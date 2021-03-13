@@ -44,7 +44,7 @@ const Drawer = ({ changeDrawerItem, drawerItem }) => {
         <Header5 color="#673a1e">My Dashbaord</Header5>
         <ul>
           {DrawerItem.map(({ name, icon }, index) => (
-            <ListStyles active={drawerItem === index}>
+            <ListStyles active={drawerItem === index} key={name}>
               <button onClick={() => changeDrawerItem(index)}>
                 <Flex justify="flex-start">
                   <Span

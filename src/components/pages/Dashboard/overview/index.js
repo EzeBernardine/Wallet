@@ -2,10 +2,8 @@ import { Styles } from "./styles";
 // import { useState } from "react";
 import { Flex, Frame, Grid } from "../../../UI_Components/Box/styles";
 import {
-  Header5,
   Header4,
   Paragraph,
-  Bold,
   Header3,
 } from "../../../UI_Components/FontSize/styles";
 // import { Link } from "react-router-dom";
@@ -27,18 +25,15 @@ const Overview = () => {
   ];
   return (
     <Styles className="App">
-    
-
       <Flex justify="flex-start" margin="0 0 50px 0" className="success">
         <Paragraph>
           Hello Anonymous, your wallet is very low at the moment, try fun it
         </Paragraph>
       </Flex>
 
-      
       <Grid gridCol="repeat(auto-fill,minmax(300px ,1fr))" gap="50px 30px ">
         {Card.map(({ item, count }) => (
-          <Flex className="card" flexDir="column">
+          <Flex className="card" flexDir="column" key={item}>
             <Header3 color="#673a1e">{count}</Header3>
             <Header4 color="#5b5551">{item}</Header4>
           </Flex>
