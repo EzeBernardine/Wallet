@@ -31,9 +31,9 @@ const Dashboard = () => {
           {drawerItem === 0 ? (
             <Overview />
           ) : drawerItem === 1 ? (
-            <Withdraw />
-          ) : drawerItem === 2 ? (
             <Deposite />
+          ) : drawerItem === 2 ? (
+            <Withdraw />
           ) : drawerItem === 3 ? (
             <Transfer />
           ) : drawerItem === 4 ? (
