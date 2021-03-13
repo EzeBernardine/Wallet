@@ -1,0 +1,50 @@
+import { Styles } from "./styles";
+// import { useState } from "react";
+import { Flex, Frame, Grid } from "../../../UI_Components/Box/styles";
+import {
+  
+  Header5,
+  Header4,
+  
+  Header3,
+} from "../../../UI_Components/FontSize/styles";
+// import { Link } from "react-router-dom";
+
+const Overview = () => {
+  const Card = [
+    {
+      item: "Withdrawal",
+      count: 0,
+    },
+    {
+      item: "Deposite",
+      count: 0,
+    },
+    {
+      item: "Transfer",
+      count: 0,
+    },
+  ];
+  return (
+    <Styles className="App">
+      <Flex justify="flex-start" margin="0 0 50px 0">
+        <Header5 color="#de8430">
+          Hello Anonymous, your wallet is very low at the moment, try fun it
+        </Header5>
+      </Flex>
+      <Grid gridCol="repeat(auto-fill,minmax(300px ,1fr))" gap="50px 30px ">
+        {Card.map(({ item, count }) => (
+          <Flex className="card" flexDir="column">
+            <Header3 color="#673a1e">{count}</Header3>
+            <Header4 color="#5b5551">{item}</Header4>
+          </Flex>
+        ))}
+      </Grid>
+      <Flex justify="flex-start" margin=" 50px 0">
+        <Header5 color="#5b5551">Your activites</Header5>
+      </Flex>
+    </Styles>
+  );
+};
+
+export default Overview;
