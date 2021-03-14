@@ -13,10 +13,10 @@ export const Styles = styled.div`
   > .success {
     background: #56de301f;
     padding: 5px 10px;
-    border: 1px solid #3ede305e;
+    border: 1px solid #2bac205e;
     border-radius: 4px;
     p {
-      color: #3ede30 !important;
+      color: #2bac20 !important;
     }
   }
   .card {

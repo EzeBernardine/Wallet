@@ -65,11 +65,11 @@ const Transfer = () => {
                       >
                         <Span color="#2b180d" size="14px">
                           You are about to transfer
-                          <Bold color="#3ede30"> #20000</Bold>
+                          <Bold color="#2bac20"> #20000</Bold>
                         </Span>
                         <Span color="#2b180d" size="14px">
                           Recipient:{" "}
-                          <Bold color="#3ede30">Anonymous Obinna</Bold>
+                          <Bold color="#2bac20">Anonymous Obinna</Bold>
                         </Span>
                       </Flex>
                     </Flex>
