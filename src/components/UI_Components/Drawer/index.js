@@ -1,6 +1,7 @@
 import { Styles, ListStyles } from "./styles";
 import { Header5, Span } from "../../UI_Components/FontSize/styles";
 // import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import {
   DashboardIcon,
   DepositeIcon,
@@ -45,27 +46,27 @@ const Drawer = () => {
       icon: <SettingsIcon width="20px" height="20px" />,
     },
   ];
+
+  let path = useLocation().pathname;
+
   return (
     <Styles className="App">
       <div className="drawer">
         <Header5 color="#673a1e">My Dashbaord</Header5>
         <ul>
           {DrawerItem.map(({ name, icon, href }, index) => (
-            <ListStyles
-              // active={drawerItem === index}
-              key={name}
-            >
+            <ListStyles active={path === href} key={name}>
               <Link to={href}>
                 <Flex justify="flex-start">
                   <Span
                     lineHeight="15px"
-                    // color={drawerItem === index ? " #de8430" : "#5b5551"}
+                    color={path === href ? " #de8430" : "#5b5551"}
                   >
                     {icon}
                   </Span>
                   <Span
                     lineHeight="15px"
-                    // color={drawerItem === index ? " #de8430" : "#5b5551"}
+                    color={path === href ? " #de8430" : "#5b5551"}
                     className="drawerText"
                   >
                     {name}
