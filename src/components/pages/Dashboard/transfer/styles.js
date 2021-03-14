@@ -24,25 +24,39 @@ export const Styles = styled.div`
             margin-right: 15px;
             color: #5b5551;
           }
-          input {
-            border: 1px solid #e1e1e1;
-            flex: 1;
-            padding: 10px 15px;
-            border-radius: 8px;
-          }
+          input,
           textarea {
             border: 1px solid #e1e1e1;
             flex: 1;
             padding: 10px 15px;
-            resize: none;
             border-radius: 8px;
+            max-width: 450px;
+            resize: none;
+          }
+
+          @media (max-width: 950px) {
+            flex-direction: column;
+            align-items: stretch;
+            input,
+            textarea {
+              max-width: 100%;
+              margin-top: 10px;
+            }
           }
         }
       }
     }
 
-    .btn span:first-child {
-      margin-right: 10px;
+    .btn {
+      button {
+        @media (max-width: 500px) {
+          width: 100%;
+        }
+      }
+      span:last-child {
+        margin-left: 10px;
+        display: flex;
+      }
     }
   }
 `;

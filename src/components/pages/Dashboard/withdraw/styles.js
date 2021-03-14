@@ -21,9 +21,7 @@ export const Styles = styled.div`
           border-radius: 8px;
           max-width: 450px;
         }
-        textarea {
-         min-height: 100px;
-        }
+      
         @media (max-width: 650px) {
           flex-direction: column;
           align-items: stretch;
@@ -37,7 +35,15 @@ export const Styles = styled.div`
     }
   }
 
-  .btn span:first-child {
-    margin-right: 10px;
-  }
+  .btn {
+      button {
+        @media (max-width: 500px) {
+          width: 100%;
+        }
+      }
+      span:last-child {
+        margin-left: 10px;
+        display: flex;
+      }
+    }
 `;

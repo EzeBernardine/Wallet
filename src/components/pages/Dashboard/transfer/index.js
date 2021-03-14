@@ -91,10 +91,8 @@ const Transfer = () => {
 
                 <Grid className="input-container" gap="18px">
                   <div>
-                    <Flex className="input-wrap">
-                      <label htmlFor="cardnumber">
-                        How much do you want to deposie
-                      </label>
+                    <Flex className="input-wrap" justify="space-between">
+                      <label htmlFor="cardnumber">Amount</label>
                       <Field
                         type="text"
                         name="amount"
@@ -106,10 +104,8 @@ const Transfer = () => {
                   </div>
 
                   <div>
-                    <Flex className="input-wrap">
-                      <label htmlFor="accountnumber">
-                        Enter account number of recepient
-                      </label>
+                    <Flex className="input-wrap"  justify="space-between">
+                      <label htmlFor="accountnumber">Recepient Account</label>
                       <Field
                         type="text"
                         name="accountnumber"
@@ -121,7 +117,7 @@ const Transfer = () => {
                   </div>
 
                   <div>
-                    <Flex className="input-wrap">
+                    <Flex className="input-wrap"  justify="space-between">
                       <label htmlFor="comment">Comment</label>
                       <Field
                         type="text"

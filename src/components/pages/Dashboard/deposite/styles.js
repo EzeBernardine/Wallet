@@ -11,7 +11,7 @@ export const Styles = styled.div`
         .input-wrap {
           label {
             margin-right: 15px;
-            color: #5b5551
+            color: #5b5551;
           }
           input {
             border: 1px solid #e1e1e1;
@@ -26,13 +26,21 @@ export const Styles = styled.div`
         label {
           white-space: nowrap;
           margin-bottom: 10px;
-          color: #5b5551
+          color: #5b5551;
         }
       }
     }
 
-    .btn span:first-child {
-      margin-right: 10px;
+    .btn {
+      button {
+        @media (max-width: 500px) {
+          width: 100%;
+        }
+      }
+      span:last-child {
+        margin-left: 10px;
+        display: flex;
+      }
     }
   }
 `;

@@ -59,3 +59,6 @@ button:hover {
 input {
   color: #5b5551
 }
+textarea {
+  min-height: 100px;
+ }
