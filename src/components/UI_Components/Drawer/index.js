@@ -30,7 +30,7 @@ const Drawer = ({ changeDrawerItem, drawerItem }) => {
       icon: <TransferIcon width="20px" height="20px" />,
     },
     {
-      name: "WalletIcon",
+      name: "Wallet",
       icon: <WalletIcon width="20px" height="20px" />,
     },
     {

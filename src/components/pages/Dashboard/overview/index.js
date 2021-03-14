@@ -7,6 +7,7 @@ import {
   Header3,
 } from "../../../UI_Components/FontSize/styles";
 // import { Link } from "react-router-dom";
+import Alert from "../../../UI_Components/Alert";
 
 const Overview = () => {
   const Card = [
@@ -26,9 +27,11 @@ const Overview = () => {
   return (
     <Styles className="App">
       <Flex justify="flex-start" margin="0 0 50px 0" className="warning">
-        <Paragraph>
-          Hello Anonymous, your wallet is very low at the moment, try fun it
-        </Paragraph>
+        <Alert>
+          <Paragraph>
+            Hello Anonymous, your wallet is very low at the moment, try fun it
+          </Paragraph>
+        </Alert>
       </Flex>
 
       <Grid gridCol="repeat(auto-fill,minmax(300px ,1fr))" gap="50px 30px ">

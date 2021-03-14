@@ -2,10 +2,6 @@ import styled from "styled-components";
 
 export const Styles = styled.div`
   > .warning {
-    background: #de84301f;
-    padding: 5px 10px;
-    border: 1px solid #de84305e;
-    border-radius: 4px;
     p {
       color: #de8430 !important;
     }

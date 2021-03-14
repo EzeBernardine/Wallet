@@ -1,7 +1,7 @@
 import { Styles } from "./styles";
 import { Flex, Grid } from "../../UI_Components/Box/styles";
 import {
-  Header2,
+  // Header2,
   Paragraph,
   Header4,
 } from "../../UI_Components/FontSize/styles";
@@ -40,14 +40,14 @@ const Registration = () => {
           >
             {({}) => (
               <Form>
-                <Header2 color="#3e3936" lineHeight="5rem">
+                <Header4 color="#3e3936" lineHeight="5rem">
                   Register
-                </Header2>
+                </Header4>
                 <Paragraph
                   color="#2b180d"
                   size="14px"
                   lineHeight="24px"
-                  spacing="1.02px"
+                  spacing=".052rem"
                 >
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
                 </Paragraph>

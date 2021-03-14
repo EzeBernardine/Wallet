@@ -46,14 +46,14 @@ export const ListStyles = styled.li`
     > div span {
       margin-right: 15px;
       :hover {
-        color: #353332;
+        color: ${({ active }) => (active ? "#de8430" : "#353332")};
       }
     }
   }
 
   @media (max-width: 700px) {
     padding: 0 10px;
-    border-bottom: ${({active}) => active && '2px solid #de8430'};
+    border-bottom: ${({ active }) => active && "2px solid #de8430"};
     > button {
       padding: 6px 6px !important;
       white-space: nowrap;
