@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const Styles = styled.div`
   form {
+    width: 100%;
+    max-width: 800px;
     .recipient {
-      border: 1px solid #3ede305e;
-      background: #56de301f;
-      padding: 30px;
+      padding: 10px;
       .recipient-image {
         border-radius: 50%;
       }
@@ -22,6 +22,7 @@ export const Styles = styled.div`
         .input-wrap {
           label {
             margin-right: 15px;
+            color: #5b5551;
           }
           input {
             border: 1px solid #e1e1e1;

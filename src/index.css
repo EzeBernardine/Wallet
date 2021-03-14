@@ -56,3 +56,6 @@ button {
 button:hover {
   background-color: #aa6524;
 }
+input {
+  color: #5b5551
+}

@@ -2,18 +2,16 @@ import { Styles } from "./styles";
 // import { useState } from "react";
 import { Flex, Frame, Grid } from "../../../UI_Components/Box/styles";
 import {
-  Header2,
   Paragraph,
-  Header4,
+  Header5,
   Bold,
   Span,
-  Header3,
 } from "../../../UI_Components/FontSize/styles";
-import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import { TransferIcon } from "../../../assest/svg";
 import Recepient from "../../../assest/black-beautiful-ladies-smiling 1.png";
+import Alert from "../../../UI_Components/Alert";
 
 const Transfer = () => {
   const validationSchema = yup.object().shape({
@@ -33,37 +31,56 @@ const Transfer = () => {
         >
           {({}) => (
             <Form>
-              <Flex margin="0 0 30px 0">
-                <Header4
-                  color="#2b180d"
-                  // size="14px"
-                  // lineHeight="24px"
-                  spacing="1.02px"
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                </Header4>
+              <Flex margin="0 0 30px 0" justify="flex-start" warning>
+                <Flex margin="0 0 30px 0" justify="flex-start">
+                  <Header5 color="#de8430" spacing=".4rem" bold>
+                    Transfers
+                  </Header5>
+                </Flex>
+                <Paragraph color="#2b180d" spacing=".025rem" lineHeight="25px">
+                  Transfers on this platform can be either directly, ie to
+                  another account user, or to the bank. Just fill in the form
+                  and you are good to go.
+                </Paragraph>
               </Flex>
 
-              <Flex justify="flex-start" margin="30px 0" className="recipient">
-                <Frame height="70px" width="70px" className="recipient-image">
-                  <img src={Recepient} alt="Anonymous" />
-                </Frame>
+              <Flex justify="flex-start" margin="30px 0">
+                {true ? (
+                  <Alert type="success">
+                    <Flex justify="flex-start" className="recipient">
+                      <Frame
+                        height="70px"
+                        width="70px"
+                        className="recipient-image"
+                      >
+                        <img src={Recepient} alt="Anonymous" />
+                      </Frame>
 
-                <Flex
-                  width="max-content"
-                  flexDir="column"
-                  margin="0 0 0 10px"
-                  className="recipient-more-details"
-                  align="flex-start"
-                >
-                  <Span color="#2b180d" size="14px">
-                    You are about to transfer{" "}
-                    <Bold color="#3ede30"> #20000</Bold>
-                  </Span>
-                  <Span color="#2b180d" size="14px">
-                    Recipient: <Bold color="#3ede30">Anonymous Obinna</Bold>
-                  </Span>
-                </Flex>
+                      <Flex
+                        width="max-content"
+                        flexDir="column"
+                        margin="0 0 0 10px"
+                        className="recipient-more-details"
+                        align="flex-start"
+                      >
+                        <Span color="#2b180d" size="14px">
+                          You are about to transfer
+                          <Bold color="#3ede30"> #20000</Bold>
+                        </Span>
+                        <Span color="#2b180d" size="14px">
+                          Recipient:{" "}
+                          <Bold color="#3ede30">Anonymous Obinna</Bold>
+                        </Span>
+                      </Flex>
+                    </Flex>
+                  </Alert>
+                ) : (
+                  <Alert type="warning">
+                    <Flex justify="flex-start">
+                      <Paragraph>Invalid recipient</Paragraph>
+                    </Flex>
+                  </Alert>
+                )}
               </Flex>
 
               <Grid className="input-container" gap="18px">
@@ -113,7 +130,7 @@ const Transfer = () => {
 
                 {/* ------------------button section-------------- */}
                 <Flex className="btn" justify="flex-end" margin="23px 0 0 0">
-                  <button type="submit" padding="15px 30px">
+                  <button type="submit" padding="15px 30px" onClick={() => []}>
                     <Flex>
                       <Span
                         lineHeight="15px"

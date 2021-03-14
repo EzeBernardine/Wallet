@@ -1,6 +1,6 @@
 import { Styles } from "./styles";
 // import { useState } from "react";
-import { Flex, Frame, Grid } from "../../../UI_Components/Box/styles";
+import { Flex, Grid } from "../../../UI_Components/Box/styles";
 import {
   Header4,
   Paragraph,
@@ -25,7 +25,7 @@ const Overview = () => {
   ];
   return (
     <Styles className="App">
-      <Flex justify="flex-start" margin="0 0 50px 0" className="success">
+      <Flex justify="flex-start" margin="0 0 50px 0" className="warning">
         <Paragraph>
           Hello Anonymous, your wallet is very low at the moment, try fun it
         </Paragraph>

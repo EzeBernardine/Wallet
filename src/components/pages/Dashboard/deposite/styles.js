@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Styles = styled.div`
   form {
+    max-width: 800px;
     .input-container {
       max-width: 700px;
       margin-top: 50px;

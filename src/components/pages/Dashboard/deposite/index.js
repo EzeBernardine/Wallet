@@ -1,24 +1,19 @@
 import { Styles } from "./styles";
-// import { useState } from "react";
 import { Flex, Frame, Grid } from "../../../UI_Components/Box/styles";
 import {
-  Header2,
   Paragraph,
-  Header4,
-  Bold,
   Span,
-  Header3,
+  Header5,
 } from "../../../UI_Components/FontSize/styles";
-import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import { DepositeIcon } from "../../../assest/svg";
-import Recepient from "../../../assest/black-beautiful-ladies-smiling 1.png";
 
 const Deposite = () => {
   const validationSchema = yup.object().shape({
     title: yup.string().min(2).required("Provide title"),
     accountnumber: yup.string().min(2).required("Provide valid email"),
+    CVV: yup.string().min(4).max(4).required("Provide valid CVV"),
   });
   return (
     <Styles className="App">
@@ -33,15 +28,17 @@ const Deposite = () => {
         >
           {({}) => (
             <Form>
-              <Flex margin="0 0 30px 0">
-                <Header4
-                  color="#2b180d"
-                  // size="14px"
-                  // lineHeight="24px"
-                  spacing="1.02px"
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                </Header4>
+              <Flex margin="0 0 30px 0" justify="flex-start" warning>
+                <Flex margin="0 0 30px 0" justify="flex-start">
+                  <Header5 color="#de8430" spacing=".4rem" bold>
+                    Deposite
+                  </Header5>
+                </Flex>
+                <Paragraph color="#2b180d" spacing=".025rem" lineHeight="25px">
+                  Transfers on this platform can be either directly, ie to
+                  another account user, or to the bank. Just fill in the form
+                  and you are good to go.
+                </Paragraph>
               </Flex>
 
               <Grid className="input-container" gap="25px">
@@ -102,7 +99,7 @@ const Deposite = () => {
                             id="comment"
                             placeholder="CVV"
                           />
-                          <ErrorMessage name="comment" component="div" />
+                          <ErrorMessage name="CVV" component="div" />
                         </Flex>
                       </Flex>
                     </Flex>
