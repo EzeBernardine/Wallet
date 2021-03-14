@@ -41,58 +41,28 @@ const Withdraw = () => {
                     spacing=".025rem"
                     lineHeight="25px"
                   >
-                    Ensure you do have enought money in your wallet before you
-                    can withdraw
+                    Ensure you do have enough money in your wallet before you
+                    can withdraw!
                   </Paragraph>
                 </Flex>
 
                 <Grid className="input-container" gap="25px">
                   <Flex justify="space-between">
-                    <Flex width="calc( 50% - 10px)">
-                      <Flex>
-                        <Grid className="input-wrap">
-                          <label htmlFor="cardnumber">Amount</label>
-                          <Field
-                            type="text"
-                            name="amount"
-                            placeholder="Amount"
-                            id="cardnumber"
-                          />
-                        </Grid>
-                        <ErrorMessage name="amount" component="div" />
-                      </Flex>
-                    </Flex>
-
-                    <Flex width="calc( 50% - 10px)">
-                      <Flex>
-                        <Grid className="input-wrap">
-                          <label htmlFor="cardnumber">Destination Account</label>
-                          <Field
-                            type="text"
-                            name="amount"
-                            placeholder="Amount"
-                            id="cardnumber"
-                          />
-                        </Grid>
-                        <ErrorMessage name="amount" component="div" />
-                      </Flex>
-                    </Flex>
-                  </Flex>
-
-                  <div>
-                    <Flex className="input-wrap" justify="space-between">
-                      <label htmlFor="cardnumber">
-                        Select account to debite
-                      </label>
+                    <Flex
+                      width="calc( 50% - 10px)"
+                      className="input-wrap"
+                      justify="space-between"
+                    >
+                      <label htmlFor="cardnumber">Amount</label>
                       <Field
                         type="text"
                         name="amount"
                         placeholder="Amount"
                         id="cardnumber"
                       />
+                      <ErrorMessage name="amount" component="div" />
                     </Flex>
-                    <ErrorMessage name="amount" component="div" />
-                  </div>
+                  </Flex>
 
                   <div>
                     <Flex className="input-wrap" justify="space-between">

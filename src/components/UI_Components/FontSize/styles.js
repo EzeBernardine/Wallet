@@ -71,7 +71,7 @@ export const Header5 = styled.h5`
   font-size: ${({ size }) => (size ? size : " 18px")};
   @media (max-width: 700px) {
     line-height: ${({ lineHeight }) => (lineHeight ? lineHeight : " normal")};
-    font-size: ${({ size }) => (size ? size : " 0.8rem;")};
+    font-size: ${({ size }) => (size ? size : " 18px")};
   }
 `;
 
