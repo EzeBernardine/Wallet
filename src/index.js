@@ -4,7 +4,13 @@ import "./index.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "../src/components/pages/home";
 import Registration from "../src/components/pages/Registration";
-import Dashboard from "../src/components/pages/Dashboard";
+import Overview from "../src/components/pages/Dashboard/overview";
+import Deposite from "../src/components/pages/Dashboard/deposite";
+import Withdraw from "../src/components/pages/Dashboard/withdraw";
+import Transfer from "../src/components/pages/Dashboard/transfer";
+import Settings from "../src/components/pages/Dashboard/Settings";
+import Wallet from "../src/components/pages/Dashboard/wallet";
+
 import reportWebVitals from "./reportWebVitals";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
@@ -16,16 +22,21 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 ReactDOM.render(
-  <BrowserRouter>
-    <ApolloProvider client={client}>
+  <ApolloProvider client={client}>
+    <BrowserRouter>
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/registration" component={Registration} />
-        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/dashboard/deposite" component={Deposite} />
+        <Route path="/dashboard/withdraw" component={Withdraw} />
+        <Route path="/dashboard/transfer" component={Transfer} />
+        <Route path="/dashboard/wallet" component={Wallet} />
+        <Route path="/dashboard/settings" component={Settings} />
+        <Route path="/dashboard" component={Overview} />
         <Route component={Error} />
       </Switch>
-    </ApolloProvider>
-  </BrowserRouter>,
+    </BrowserRouter>
+  </ApolloProvider>,
   document.getElementById("root")
 );
 

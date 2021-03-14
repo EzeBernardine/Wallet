@@ -36,12 +36,13 @@ export const Styles = styled.aside`
 export const ListStyles = styled.li`
   margin: 5px 0;
   cursor: pointer;
-  button {
+  a {
     padding: 13px 0;
     font-weight: normal;
     color: #5b5551;
     width: 100%;
     text-align: start;
+    display: inline-block;
     background-color: transparent;
     > div span {
       margin-right: 15px;
@@ -54,7 +55,7 @@ export const ListStyles = styled.li`
   @media (max-width: 700px) {
     padding: 0 10px;
     border-bottom: ${({ active }) => active && "2px solid #de8430"};
-    > button {
+    > a {
       padding: 6px 6px !important;
       white-space: nowrap;
       span {

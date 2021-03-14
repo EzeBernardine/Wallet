@@ -10,31 +10,38 @@ import {
   TransferIcon,
 } from "../../assest/svg";
 import { Flex } from "../Box/styles";
+import { Link } from "react-router-dom";
 
-const Drawer = ({ changeDrawerItem, drawerItem }) => {
+const Drawer = () => {
   const DrawerItem = [
     {
       name: "Overview",
+      href: "/dashboard",
       icon: <DashboardIcon width="20px" height="20px" />,
     },
     {
       name: "Deposite",
+      href: "/dashboard/deposite",
       icon: <DepositeIcon width="20px" height="20px" />,
     },
     {
       name: "Withdraw",
+      href: "/dashboard/withdraw",
       icon: <WithdrawalIcon width="20px" height="20px" />,
     },
     {
       name: "Transfer",
+      href: "/dashboard/transfer",
       icon: <TransferIcon width="20px" height="20px" />,
     },
     {
       name: "Wallet",
+      href: "/dashboard/wallet",
       icon: <WalletIcon width="20px" height="20px" />,
     },
     {
       name: "Settings",
+      href: "/dashboard/settings",
       icon: <SettingsIcon width="20px" height="20px" />,
     },
   ];
@@ -43,25 +50,28 @@ const Drawer = ({ changeDrawerItem, drawerItem }) => {
       <div className="drawer">
         <Header5 color="#673a1e">My Dashbaord</Header5>
         <ul>
-          {DrawerItem.map(({ name, icon }, index) => (
-            <ListStyles active={drawerItem === index} key={name}>
-              <button onClick={() => changeDrawerItem(index)}>
+          {DrawerItem.map(({ name, icon, href }, index) => (
+            <ListStyles
+              // active={drawerItem === index}
+              key={name}
+            >
+              <Link to={href}>
                 <Flex justify="flex-start">
                   <Span
                     lineHeight="15px"
-                    color={drawerItem === index ? " #de8430" : "#5b5551"}
+                    // color={drawerItem === index ? " #de8430" : "#5b5551"}
                   >
                     {icon}
                   </Span>
                   <Span
                     lineHeight="15px"
-                    color={drawerItem === index ? " #de8430" : "#5b5551"}
+                    // color={drawerItem === index ? " #de8430" : "#5b5551"}
                     className="drawerText"
                   >
                     {name}
                   </Span>
                 </Flex>
-              </button>
+              </Link>
             </ListStyles>
           ))}
         </ul>
