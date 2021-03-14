@@ -1,13 +1,8 @@
 import { Styles } from "./styles";
-import { Flex, Frame, Grid } from "../../../UI_Components/Box/styles";
-import {
-  Paragraph,
-  Span,
-  Header5,
-} from "../../../UI_Components/FontSize/styles";
+import { Flex, Grid } from "../../../UI_Components/Box/styles";
+import { Span, Header5 } from "../../../UI_Components/FontSize/styles";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
-import { SettingsIcon } from "../../../assest/svg";
 import Layout from "../../../UI_Components/Layout";
 
 const Settings = () => {
