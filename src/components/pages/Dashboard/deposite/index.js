@@ -12,7 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
-import { TransferIcon } from "../../../assest/svg";
+import { DepositeIcon } from "../../../assest/svg";
 import Recepient from "../../../assest/black-beautiful-ladies-smiling 1.png";
 
 const Deposite = () => {
@@ -44,29 +44,7 @@ const Deposite = () => {
                 </Header4>
               </Flex>
 
-              <Flex justify="flex-start" margin="30px 0" className="recipient">
-                <Frame height="70px" width="70px" className="recipient-image">
-                  <img src={Recepient} alt="Anonymous" />
-                </Frame>
-
-                <Flex
-                  width="max-content"
-                  flexDir="column"
-                  margin="0 0 0 10px"
-                  className="recipient-more-details"
-                  align="flex-start"
-                >
-                  <Span color="#2b180d" size="14px">
-                    You are about to transfer{" "}
-                    <Bold color="#3ede30"> #20000</Bold>
-                  </Span>
-                  <Span color="#2b180d" size="14px">
-                    Recipient: <Bold color="#3ede30">Anonymous Obinna</Bold>
-                  </Span>
-                </Flex>
-              </Flex>
-
-              <Grid className="input-container" gap="18px">
+              <Grid className="input-container" gap="25px">
                 <div>
                   <Flex className="input-wrap">
                     <label htmlFor="cardnumber">
@@ -82,34 +60,54 @@ const Deposite = () => {
                   <ErrorMessage name="amount" component="div" />
                 </div>
 
-                <div>
-                  <Flex className="input-wrap">
-                    <label htmlFor="accountnumber">
-                      Enter account number of recepient
-                    </label>
-                    <Field
-                      type="text"
-                      name="accountnumber"
-                      id="accountnumber"
-                      placeholder="Account Number"
-                    />
-                  </Flex>
-                  <ErrorMessage name="name" component="div" />
-                </div>
+                <fieldset>
+                  <legend color="#2b180d" spacing="1.02px">
+                    Card details
+                  </legend>
 
-                <div>
-                  <Flex className="input-wrap">
-                    <label htmlFor="comment">Comment</label>
-                    <Field
-                      type="text"
-                      name="comment"
-                      id="comment"
-                      component="textarea"
-                      placeholder="Account Number"
-                    />
-                  </Flex>
-                  <ErrorMessage name="comment" component="div" />
-                </div>
+                  <Grid className="input-container" gap="18px">
+                    <Flex justify="flex-start">
+                      <label htmlFor="cardnumber">Enter card number</label>
+                      <Flex className="input-wrap">
+                        <Field
+                          type="text"
+                          name="cardnumber"
+                          id="cardnumber"
+                          placeholder="XXXX XXXX XXXX XXXX"
+                        />
+                        <ErrorMessage name="cardnumber" component="div" />
+                      </Flex>
+                    </Flex>
+
+                    <Flex justify="space-between">
+                      <Flex width="calc( 50% - 10px )" justify="flex-start">
+                        <label htmlFor="comment">EXP Date</label>
+                        <Flex className="input-wrap">
+                          <Field
+                            type="text"
+                            name="comment"
+                            id="comment"
+                            placeholder="EXP Date"
+                          />
+                          <ErrorMessage name="comment" component="div" />
+                        </Flex>
+                      </Flex>
+
+                      <Flex width="calc( 50% - 10px )" justify="flex-start">
+                        <label htmlFor="comment">CVV</label>
+                        <Flex className="input-wrap">
+                          <Field
+                            type="text"
+                            name="comment"
+                            id="comment"
+                            placeholder="CVV"
+                          />
+                          <ErrorMessage name="comment" component="div" />
+                        </Flex>
+                      </Flex>
+                    </Flex>
+                  </Grid>
+                </fieldset>
 
                 {/* ------------------button section-------------- */}
                 <Flex className="btn" justify="flex-end" margin="23px 0 0 0">
@@ -120,11 +118,11 @@ const Deposite = () => {
                         color={"#fff"}
                         className="drawerText"
                       >
-                        Transfer
+                        Deposite
                       </Span>
 
                       <Span lineHeight="15px" color={"#fff"}>
-                        <TransferIcon width="20px" height="20px" />
+                        <DepositeIcon width="20px" height="20px" />
                       </Span>
                     </Flex>
                   </button>

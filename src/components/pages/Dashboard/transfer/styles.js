@@ -1,52 +1,47 @@
 import styled from "styled-components";
 
 export const Styles = styled.div`
-  > aside {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 240px;
-    bottom: 0;
-    padding: 20px;
-    > h3 {
-      margin: 50px 0 20px;
+  form {
+    .recipient {
+      border: 1px solid #3ede305e;
+      background: #56de301f;
+      padding: 30px;
+      .recipient-image {
+        border-radius: 50%;
+      }
+      .recipient-more-details span {
+        font-family: "Regular 400 italic";
+      }
     }
-    ul {
-      li {
-        color: #5b5551;
-        margin: 5px 0 5px 10px;
-        padding: 10px;
-        cursor: pointer;
-        :hover {
-          color: #353332;
-        }
-        :last-child {
-          padding: 0;
-          a {
-            width: 100%;
-            display: inline-block;
-            padding: 10px;
-            color: #4b5563;
-            :hover {
-              color: #353332;
-            }
+
+    .input-container {
+      max-width: 700px;
+      margin-top: 50px;
+      > div {
+        width: 100%;
+        .input-wrap {
+          label {
+            margin-right: 15px;
+          }
+          input {
+            border: 1px solid #e1e1e1;
+            flex: 1;
+            padding: 10px 15px;
+            border-radius: 8px;
+          }
+          textarea {
+            border: 1px solid #e1e1e1;
+            flex: 1;
+            padding: 10px 15px;
+            resize: none;
+            border-radius: 8px;
           }
         }
       }
     }
-  }
-  > div {
-    width: calc(100% - 240px);
-    margin: 0 0 0 auto;
-    > header {
-      height: 70px;
-      padding: 0 5%;
-      width: 100%;
-      > div {
-        span {
-          margin-left: 15px;
-        }
-      }
+
+    .btn span:first-child {
+      margin-right: 10px;
     }
   }
 `;
