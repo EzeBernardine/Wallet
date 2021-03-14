@@ -28,7 +28,7 @@ const Settings = () => {
             validationSchema={validationSchema}
             onSubmit={async () => {}}
           >
-            {({}) => (
+            {() => (
               <Form>
                 <Flex margin="0 0 30px 0" justify="flex-start" warning>
                   <Header5 color="#de8430" spacing=".4rem" bold>

@@ -1,5 +1,5 @@
 import { Styles } from "./styles";
-import { Flex, Frame, Grid } from "../../../UI_Components/Box/styles";
+import { Flex, Grid } from "../../../UI_Components/Box/styles";
 import {
   Paragraph,
   Span,
@@ -28,7 +28,7 @@ const Withdraw = () => {
             validationSchema={validationSchema}
             onSubmit={async () => {}}
           >
-            {({}) => (
+            {() => (
               <Form>
                 <Flex margin="0 0 30px 0" justify="flex-start" warning>
                   <Flex margin="0 0 30px 0" justify="flex-start">

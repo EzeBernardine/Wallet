@@ -38,7 +38,7 @@ const Registration = () => {
             validationSchema={validationSchema}
             onSubmit={async () => {}}
           >
-            {({}) => (
+            {() => (
               <Form>
                 <Header4 color="#3e3936" lineHeight="5rem">
                   Register
