@@ -68,3 +68,7 @@ input, textarea {
 textarea {
   min-height: 100px;
 }
+.error {
+  font-size: 10px;
+  color: #de8430;
+}

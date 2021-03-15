@@ -8,11 +8,16 @@ import {
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
+import { useHistory } from "react-router-dom";
+// import axios from "axios";
+import API from "../../../lib/api";
 
 const Registration = () => {
+  let history = useHistory();
+
   const validationSchema = yup.object().shape({
-    title: yup.string().min(2).required("Provide title"),
-    email: yup.string().min(2).email().required("Provide valid email"),
+    username: yup.string().min(2).required("Provide a name"),
+    password: yup.string().min(2).required("Provide valid password"),
   });
   return (
     <Styles className="Registration">
@@ -25,22 +30,24 @@ const Registration = () => {
       </Flex>
 
       <Flex align="stretch" margin="70px 0">
-        {/* <Flex width='30%' height='100%' className='image'>
-          <Frame width="100%" height="auto">
-            <img src={Image} alt="" />
-          </Frame>
-        </Flex> */}
-
         <Flex width="100%">
           <Formik
             initialValues={{
-              title: "",
-              description: "",
+              username: "",
+              password: "",
             }}
             validationSchema={validationSchema}
-            onSubmit={async () => {}}
+            onSubmit={async ({ username, password }) => {
+              await API.post("user/register", {
+                username,
+                password,
+              });
+
+            
+              history.push("/login");
+            }}
           >
-            {() => (
+            {({ handleChange, values: { username, password } }) => (
               <Form>
                 <Header4 color="#3e3936" lineHeight="5rem">
                   Register
@@ -56,31 +63,42 @@ const Registration = () => {
 
                 <Grid className="input-container" gap="18px">
                   <div>
-                    <Field type="text" name="name" placeholder="Name" />
-                    <ErrorMessage name="name" component="div" />
-                  </div>
-
-                  <div>
-                    <Field type="text" name="email" placeholder="Email" />
-                    <ErrorMessage name="email" component="div" />
+                    <Field
+                      type="text"
+                      name="username"
+                      placeholder="Username"
+                      value={username}
+                      onChange={handleChange}
+                    />
+                    <ErrorMessage
+                      name="username"
+                      component="div"
+                      className="error"
+                    />
                   </div>
 
                   <div>
                     <Field
                       type="text"
-                      name="email"
-                      placeholder="Account Number"
+                      name="password"
+                      placeholder="Password"
+                      value={password}
+                      onChange={handleChange}
                     />
-                    <ErrorMessage name="email" component="div" />
+                    <ErrorMessage
+                      name="password"
+                      component="div"
+                      className="error"
+                    />
                   </div>
                 </Grid>
 
                 <div className="btn">
-                  <Link to="./login">
-                    <button type="submit" padding="15px 30px">
-                      Submit
-                    </button>
-                  </Link>
+                  {/* <Link to="./login"> */}
+                  <button type="submit" padding="15px 30px">
+                    Submit
+                  </button>
+                  {/* </Link> */}
                 </div>
               </Form>
             )}
