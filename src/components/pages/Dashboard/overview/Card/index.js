@@ -1,8 +1,6 @@
 import { Styles } from "./styles";
-import { Flex, Grid } from "../../../../UI_Components/Box/styles";
+import { Flex } from "../../../../UI_Components/Box/styles";
 import {
-  Header4,
-  Span,
   Header3,
   Small,
   Header5,
@@ -12,14 +10,9 @@ import { WalletIcon } from "../../../../assest/svg";
 const Card = () => {
   return (
     <Styles className="App">
-      <Flex
-        className="balance"
-        margin="0 0 50px 0"
-        align="flex-start"
-        maxWidth="320px"
-      >
+      <Flex className="balance" align="flex-start" maxWidth="320px">
         <Flex justify="flex-start">
-          <Flex justify="flex-start" className="transaction-dates">
+          <Flex justify="flex-start" className="time-duration">
             <Flex flexDir="column" align="flex-start" width="50%">
               <Small color="#fdf1e9">Last login</Small>
               <Small color="#fdf1e9">Account Number</Small>

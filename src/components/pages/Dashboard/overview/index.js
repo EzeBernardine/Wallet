@@ -4,8 +4,6 @@ import {
   Header4,
   Span,
   Header3,
-  Small,
-  Header5,
 } from "../../../UI_Components/FontSize/styles";
 import Layout from "../../../UI_Components/Layout";
 import Alert from "../../../UI_Components/Alert";
@@ -38,26 +36,35 @@ const Overview = () => {
           </Alert>
         </Flex>
 
-        <Flex>
+        <Flex justify="flex-start" margin="0 0 50px 0">
           <BalanceCard />
 
-          <Flex justify="flex-start" width="max-content">
-            <Flex justify="flex-start" className="transaction-dates">
-              <Flex flexDir="column" align="flex-start" width="50%">
-                <Small color="#5b5551">Last login</Small>
-                <Small color="#5b5551">Account Number</Small>
-                <Small color="#5b5551">Account Number</Small>
-              </Flex>
-              <Flex
-                flexDir="column"
-                align="flex-start"
-                width="calc( 50% - 25px)"
-                margin="0 0 0 15px"
-              >
-                <Small color="#5b5551"> 1-12-2021</Small>
-                <Small color="#5b5551"> 1-12-2021</Small>
-                <Small color="#5b5551"> 000000000</Small>
-              </Flex>
+          <Flex
+            justify="space-between"
+            minWidth="max-content"
+            maxWidth="400px"
+            className="transaction-dates"
+            margin="0 0 0 30px"
+          >
+            <Flex
+              flexDir="column"
+              align="flex-start"
+              width="calc( 50% - 25px)"
+              miWidth="max-content"
+            >
+              <Span color="#5b5551">Last Transfer</Span>
+              <Span color="#5b5551">Last Deposit</Span>
+              <Span color="#5b5551">Last Withdrawal</Span>
+            </Flex>
+            <Flex
+              flexDir="column"
+              align="flex-start"
+              width="calc( 50% - 25px)"
+              margin="0 0 0 15px"
+            >
+              <Span color="#5b5551"> 1-12-2021</Span>
+              <Span color="#5b5551"> 1-12-2021</Span>
+              <Span color="#5b5551"> 000000000</Span>
             </Flex>
           </Flex>
         </Flex>

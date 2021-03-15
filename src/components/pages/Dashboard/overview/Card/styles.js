@@ -7,7 +7,7 @@ export const Styles = styled.div`
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 4px 0 hsla(198, 45%, 10%, 0.12);
-    .transaction-dates {
+    .time-duration {
       position: relative;
       :after {
         position: absolute;
