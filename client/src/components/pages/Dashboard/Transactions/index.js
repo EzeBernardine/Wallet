@@ -8,60 +8,54 @@ import CustomTable from "../../../UI_Components/Table";
 const Deposite = () => {
   const tableContent = [
     {
-      firstCol: "smds",
-      secondCol:
-        "this is the description for each column and i hope it can populate the entire page with information",
+      firstCol: "Deposit",
+      secondCol: "100000",
       thirdCol: "8/21/2018",
       fourthCol: "02/07/2020",
       fothCol: "kfkskkn",
     },
     {
-      firstCol: "hbb",
-      secondCol:
-        "this is the description for each column and i hope it can populate the entire page with information",
+      firstCol: "Transfer",
+      secondCol: "100000",
       thirdCol: "8/21/2018",
       fourthCol: "02/07/2020",
       fothCol: "flkkskfknk",
     },
     {
-      firstCol: "smds",
-      secondCol:
-        "this is the description for each column and i hope it can populate the entire page with information",
+      firstCol: "Withdrawal",
+      secondCol: "100000",
       thirdCol: "8/21/2018",
       fourthCol: "02/07/2020",
       fothCol: "kfkskkn",
     },
     {
-      firstCol: "hbb",
-      secondCol:
-        "this is the description for each column and i hope it can populate the entire page with information",
+      firstCol: "Withdrawal",
+      secondCol: "100000",
       thirdCol: "8/21/2018",
       fourthCol: "02/07/2020",
       fothCol: "flkkskfknk",
     },
     {
-      firstCol: "smds",
-      secondCol:
-        "this is the description for each column and i hope it can populate the entire page with information",
+      firstCol: "Deposit",
+      secondCol: "100000",
       thirdCol: "8/21/2018",
       fourthCol: "02/07/2020",
       fothCol: "kfkskkn",
     },
     {
-      firstCol: "hbb",
-      secondCol:
-        "this is the description for each column and i hope it can populate the entire page with information",
+      firstCol: "Deposit",
+      secondCol: "20000",
       thirdCol: "8/21/2018",
       fourthCol: "02/07/2020",
       fothCol: "flkkskfknk",
     },
   ];
   const tableHead = [
-    "Deposit",
-    "Withdrawal",
-    "Withdrawal Comments",
-    "Transfer  ",
-    "Transfer  COmments",
+    "Type",
+    "Amount",
+    "Status",
+    "Date  ",
+    "Narration",
   ];
   return (
     <Layout>

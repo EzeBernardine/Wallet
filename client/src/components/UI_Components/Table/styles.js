@@ -21,7 +21,7 @@ export const CustomTableMain = styled.section`
         th {
           text-align: start;
           color: ${({ theadColor }) => theadColor || "#033"};
-          font-size: 0.8rem;
+          font-size: 16px;
           padding: 0.8em 0 0.8rem 1.8rem;
           min-width: 160px;
           @media (max-width: 1200px) {
@@ -82,7 +82,7 @@ export const CustomTableMain = styled.section`
 export const Td = styled.td`
   padding: 1.2rem 1.8rem;
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 14px;
   span {
     font-size: 0.8rem;
     color: ${({ tbodyColor }) => tbodyColor || "#767675"};
@@ -115,8 +115,9 @@ export const Td = styled.td`
   }
   @media (max-width: 600px) {
     font-size: 0.65rem;
+    font-size: 14px;
     &:before {
-      font-size: 0.6rem;
+      font-size: 14px;
     }
   }
 `;

@@ -81,7 +81,7 @@ export const Paragraph = styled.p`
   text-align: ${({ align, center }) => (center ? "center" : align && align)};
   color: ${({ color }) => (color ? color : "blue")};
   line-height: ${({ lineHeight }) => (lineHeight ? lineHeight : " 34px")};
-  font-size: ${({ size }) => (size ? size : " 0.95rem;")};
+  font-size: ${({ size }) => (size ? size : " 0.95rem")};
   font-weight: ${({ bold, weight }) =>
     weight ? weight : bold ? "bold" : "normal"};
   @media (max-width: 700px) {

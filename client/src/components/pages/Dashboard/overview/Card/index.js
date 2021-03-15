@@ -14,8 +14,8 @@ const Card = () => {
         <Flex justify="flex-start">
           <Flex justify="flex-start" className="time-duration">
             <Flex flexDir="column" align="flex-start" width="50%">
-              <Small color="#fdf1e9">Last login</Small>
-              <Small color="#fdf1e9">Account Number</Small>
+              <Small color="#673a1e">Last login</Small>
+              <Small color="#673a1e">Account Number</Small>
             </Flex>
             <Flex
               flexDir="column"
@@ -23,8 +23,8 @@ const Card = () => {
               width="calc( 50% - 25px)"
               margin="0 0 0 15px"
             >
-              <Small color="#fdf1e9"> 1-12-2021</Small>
-              <Small color="#fdf1e9"> 000000000</Small>
+              <Small color="#673a1e"> 1-12-2021</Small>
+              <Small color="#673a1e"> 000000000</Small>
             </Flex>
           </Flex>
         </Flex>
@@ -35,7 +35,7 @@ const Card = () => {
             <Header5 color="#fff">Balance</Header5>
           </Flex>
           <Flex margin="10px 0 0 0" width=" max-content" className="amount">
-            <Header3 color="#de8430"># 200000</Header3>
+            <Header3 color="#de8430">	&#8358; 200000</Header3>
           </Flex>
         </Flex>
       </Flex>
