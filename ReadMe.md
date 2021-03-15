@@ -3,7 +3,7 @@
 - Landing Page
 - Registration Page
 - User Dashboard
-    - Deposite
+    - Deposit
     - Withdraw
     - Transfer
     - Reverse Transaction
