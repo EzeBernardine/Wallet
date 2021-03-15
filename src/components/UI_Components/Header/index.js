@@ -22,7 +22,7 @@ const Header = () => {
             <Span color="#2c2d2d">Anonymous Obinna</Span>
           </Flex>
 
-          <Flex width="max-content" justify="flex-end" margin="15px 0 0 25px">
+          <Flex width="max-content" justify="flex-end" margin="0 0 0 25px">
             <Link to="/">
               <LogoutIcon color="#918e8c" width="20px" height="20px" />
             </Link>

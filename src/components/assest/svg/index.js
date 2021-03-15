@@ -769,6 +769,7 @@ export const TransferIcon = ({ width, height, color }) => (
     fill={color || "currentColor"}
     x="0"
     y="0"
+    // viewBox="0 0 512 512"
   >
     <g>
       <path
@@ -785,6 +786,52 @@ export const TransferIcon = ({ width, height, color }) => (
   </svg>
 );
 
+export const WalletIcon = ({ width, height, color }) => (
+  <svg
+    width={width || 52}
+    height={height || 52}
+    fill={color || "currentColor"}
+    x="0"
+    y="0"
+    viewBox="0 0 512 512"
+  >
+    <g>
+      <g>
+        <g>
+          <path
+            d="M374.154,182.154H512v-64c0-40.719-33.127-73.846-73.846-73.846H73.846C33.127,44.308,0,77.435,0,118.154v275.692    c0,40.719,33.127,73.846,73.846,73.846h364.308c40.719,0,73.846-33.127,73.846-73.846v-64H374.154    c-40.719,0-73.846-33.127-73.846-73.846S333.435,182.154,374.154,182.154z"
+            fill={color || "currentColor"}
+            data-original="#000000"
+          />
+        </g>
+      </g>
+      <g>
+        <g>
+          <path
+            d="M374.154,211.692c-24.431,0-44.308,19.876-44.308,44.308s19.876,44.308,44.308,44.308H512v-88.615H374.154z     M393.846,270.769h-19.692c-8.157,0-14.769-6.613-14.769-14.769s6.613-14.769,14.769-14.769h19.692    c8.157,0,14.769,6.613,14.769,14.769S402.003,270.769,393.846,270.769z"
+            fill={color || "currentColor"}
+            data-original="#000000"
+          />
+        </g>
+      </g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+      <g></g>
+    </g>
+  </svg>
+);
 // export const OutlineIcon = ({ width, height, color }) => {
 //     width={width || 52}
 //     height={height || 52}

@@ -4,9 +4,12 @@ import {
   Header4,
   Span,
   Header3,
+  Small,
+  Header5,
 } from "../../../UI_Components/FontSize/styles";
 import Layout from "../../../UI_Components/Layout";
 import Alert from "../../../UI_Components/Alert";
+import BalanceCard from "./Card";
 
 const Overview = () => {
   const Card = [
@@ -35,15 +38,27 @@ const Overview = () => {
           </Alert>
         </Flex>
 
-        <Flex
-          className="balance"
-          margin="0 0 50px 0"
-          justify="flex-start"
-          maxWidth="320px"
-        >
-          <Header4 color="#fff"> Your balance</Header4>
-          <Flex margin="10px 0 0 0" width=" max-content">
-            <Header3 color="#de8430"># 200000</Header3>
+        <Flex>
+          <BalanceCard />
+
+          <Flex justify="flex-start" width="max-content">
+            <Flex justify="flex-start" className="transaction-dates">
+              <Flex flexDir="column" align="flex-start" width="50%">
+                <Small color="#5b5551">Last login</Small>
+                <Small color="#5b5551">Account Number</Small>
+                <Small color="#5b5551">Account Number</Small>
+              </Flex>
+              <Flex
+                flexDir="column"
+                align="flex-start"
+                width="calc( 50% - 25px)"
+                margin="0 0 0 15px"
+              >
+                <Small color="#5b5551"> 1-12-2021</Small>
+                <Small color="#5b5551"> 1-12-2021</Small>
+                <Small color="#5b5551"> 000000000</Small>
+              </Flex>
+            </Flex>
           </Flex>
         </Flex>
 

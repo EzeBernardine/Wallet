@@ -14,6 +14,9 @@ export const Styles = styled.header`
     span {
       margin-left: 15px;
     }
+    a{
+      display: flex
+    }
   }
   @media (max-width: 500px) {
     .welcomeNote {
