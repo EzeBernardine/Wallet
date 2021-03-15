@@ -21,7 +21,7 @@ const Drawer = () => {
       icon: <DashboardIcon width="20px" height="20px" />,
     },
     {
-      name: "Deposite",
+      name: "Deposit",
       href: "/dashboard/deposite",
       icon: <DepositeIcon width="20px" height="20px" />,
     },
