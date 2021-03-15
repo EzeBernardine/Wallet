@@ -26,12 +26,7 @@ export const Styles = styled.div`
           }
           input,
           textarea {
-            border: 1px solid #e1e1e1;
-            flex: 1;
-            padding: 10px 15px;
-            border-radius: 8px;
             max-width: 450px;
-            resize: none;
           }
 
           @media (max-width: 950px) {
