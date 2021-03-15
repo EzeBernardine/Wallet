@@ -7,10 +7,10 @@ import {
 } from "../../../UI_Components/FontSize/styles";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
-import { DepositeIcon } from "../../../assest/svg";
+import { DepositIcon } from "../../../assest/svg";
 import Layout from "../../../UI_Components/Layout";
 
-const Deposite = () => {
+const Deposit = () => {
   const validationSchema = yup.object().shape({
     title: yup.string().min(2).required("Provide title"),
     accountnumber: yup.string().min(2).required("Provide valid email"),
@@ -33,7 +33,7 @@ const Deposite = () => {
                 <Flex margin="0 0 30px 0" justify="flex-start" warning>
                   <Flex margin="0 0 30px 0" justify="flex-start">
                     <Header5 color="#de8430" spacing=".4rem" bold>
-                      Deposite
+                      Deposit
                     </Header5>
                   </Flex>
                   <Paragraph
@@ -51,7 +51,7 @@ const Deposite = () => {
                   <div>
                     <Flex className="input-wrap">
                       <label htmlFor="cardnumber">
-                        How much do you want to deposite
+                        How much do you want to deposit
                       </label>
                       <Field
                         type="text"
@@ -121,11 +121,11 @@ const Deposite = () => {
                           color={"#fff"}
                           className="drawerText"
                         >
-                          Deposite
+                          Deposit
                         </Span>
 
                         <Span lineHeight="15px" color={"#fff"}>
-                          <DepositeIcon width="20px" height="20px" />
+                          <DepositIcon width="20px" height="20px" />
                         </Span>
                       </Flex>
                     </button>
@@ -140,4 +140,4 @@ const Deposite = () => {
   );
 };
 
-export default Deposite;
+export default Deposit;

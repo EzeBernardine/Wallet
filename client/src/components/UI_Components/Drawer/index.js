@@ -4,7 +4,7 @@ import { Header5, Span } from "../../UI_Components/FontSize/styles";
 import { useLocation } from "react-router-dom";
 import {
   DashboardIcon,
-  DepositeIcon,
+  DepositIcon,
   WithdrawalIcon,
   TransactionIcon,
   SettingsIcon,
@@ -22,8 +22,8 @@ const Drawer = () => {
     },
     {
       name: "Deposit",
-      href: "/dashboard/deposite",
-      icon: <DepositeIcon width="20px" height="20px" />,
+      href: "/dashboard/deposit",
+      icon: <DepositIcon width="20px" height="20px" />,
     },
     {
       name: "Withdraw",

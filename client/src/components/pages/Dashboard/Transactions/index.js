@@ -5,7 +5,7 @@ import { Paragraph, Header5 } from "../../../UI_Components/FontSize/styles";
 import Layout from "../../../UI_Components/Layout";
 import CustomTable from "../../../UI_Components/Table";
 
-const Deposite = () => {
+const Deposit = () => {
   const tableContent = [
     {
       firstCol: "Deposit",
@@ -91,4 +91,4 @@ const Deposite = () => {
   );
 };
 
-export default Deposite;
+export default Deposit;

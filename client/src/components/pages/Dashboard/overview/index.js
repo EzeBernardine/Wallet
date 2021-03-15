@@ -16,7 +16,7 @@ const Overview = () => {
       count: 30,
     },
     {
-      item: "Deposite",
+      item: "Deposit",
       count: 20,
     },
     {

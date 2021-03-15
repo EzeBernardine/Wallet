@@ -172,7 +172,7 @@ export const SettingsOutlineIcon = ({ width, height, color }) => {
     </svg>
   );
 };
-export const DepositeOutlineIcon = ({ width, height, color }) => {
+export const DepositOutlineIcon = ({ width, height, color }) => {
   return (
     <svg
       width={width || 52}
@@ -543,7 +543,7 @@ export const SettingsIcon = ({ width, height, color }) => (
   </svg>
 );
 
-export const DepositeIcon = ({ width, height, color }) => (
+export const DepositIcon = ({ width, height, color }) => (
   <svg
     width={width || 52}
     height={height || 52}
