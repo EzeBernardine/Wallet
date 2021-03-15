@@ -13,9 +13,10 @@ export const Styles = styled.div`
 
   @media (max-width: 700px) {
     width: 100%;
+    margin-top: 136px;
     > section {
       margin: 20px 0;
-      padding: 0 5%;
+      padding: 50px 5%;
     }
   }
 `;

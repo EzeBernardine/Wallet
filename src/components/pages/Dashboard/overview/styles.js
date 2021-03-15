@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
 export const Styles = styled.div`
-  > .warning {
-    p {
-      color: #de8430 !important;
-    }
-  }
-  > .success {
-    background: #56de301f;
-    padding: 5px 10px;
-    border: 1px solid #2bac205e;
-    border-radius: 4px;
-    p {
-      color: #2bac20 !important;
+  .balance {
+    background: linear-gradient(#ded330, #de8430);// #de8430;
+    width: 300px;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px 0 hsla(198, 45%, 10%, 0.12);
+
+    > div {
+      box-shadow: 0 2px 5px 4px hsla(204, 10.6%, 9.2%, 0.13);
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px;
     }
   }
   .card {

@@ -6,7 +6,7 @@ import {
   DashboardIcon,
   DepositeIcon,
   WithdrawalIcon,
-  WalletIcon,
+  TransactionIcon,
   SettingsIcon,
   TransferIcon,
 } from "../../assest/svg";
@@ -36,9 +36,9 @@ const Drawer = () => {
       icon: <TransferIcon width="20px" height="20px" />,
     },
     {
-      name: "Wallet",
+      name: "Transaction",
       href: "/dashboard/wallet",
-      icon: <WalletIcon width="20px" height="20px" />,
+      icon: <TransactionIcon width="20px" height="20px" />,
     },
     {
       name: "Settings",
@@ -54,13 +54,13 @@ const Drawer = () => {
       <div className="drawer">
         <Header5 color="#673a1e">My Dashbaord</Header5>
         <ul>
-          {DrawerItem.map(({ name, icon, href }, index) => (
+          {DrawerItem.map(({ name, icon, href }) => (
             <ListStyles active={path === href} key={name}>
               <Link to={href}>
                 <Flex justify="flex-start">
                   <Span
                     lineHeight="15px"
-                    color={path === href ? " #de8430" : "#5b5551"}
+                    color={path === href ? " #de8430" : "#918e8c"}
                   >
                     {icon}
                   </Span>

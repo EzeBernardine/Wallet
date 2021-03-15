@@ -1,11 +1,15 @@
 import { Styles } from "./styles";
 
-import { AlertIcon } from "../../assest/svg";
+import { AlertIcon, SuccessIcon } from "../../assest/svg";
 
 const Alert = ({ type, children }) => {
   return (
     <Styles className="App" type={type}>
-      <AlertIcon width="15px" height="15px" />
+      {type === "success" ? (
+        <SuccessIcon width="15px" height="15px" />
+      ) : (
+        <AlertIcon width="15px" height="15px" />
+      )}
       {children}
     </Styles>
   );

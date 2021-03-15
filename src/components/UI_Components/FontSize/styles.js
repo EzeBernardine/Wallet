@@ -56,7 +56,7 @@ export const Header4 = styled.h4`
   font-size: ${({ size }) => (size ? size : " 24px")};
   @media (max-width: 700px) {
     line-height: ${({ lineHeight }) => (lineHeight ? lineHeight : " normal")};
-    font-size: ${({ size }) => (size ? size : " 0.9rem;")};
+    font-size: ${({ size }) => (size ? size : " 24px")};
   }
 `;
 

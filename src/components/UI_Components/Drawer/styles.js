@@ -14,10 +14,16 @@ export const Styles = styled.aside`
     }
   }
   @media (max-width: 700px) {
-    position: unset;
+    position: fixed;
     width: 100%;
-    padding: 20px 5%;
-    margin: 70px 0 0;
+    padding: 20px 5% 0;
+    z-index: 100;
+    right: 0;
+    left: 0;
+    bottom: unset;
+    top: 70px;
+    background: white;
+    border-bottom: 1px solid hsla(198, 45%, 10%, 0.12);
     .drawer {
       margin: 0;
       h5 {
@@ -54,6 +60,7 @@ export const ListStyles = styled.li`
 
   @media (max-width: 700px) {
     padding: 0 10px;
+    margin: 0;
     border-bottom: ${({ active }) => active && "2px solid #de8430"};
     > a {
       padding: 6px 6px !important;

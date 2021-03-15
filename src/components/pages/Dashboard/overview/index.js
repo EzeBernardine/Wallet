@@ -29,9 +29,16 @@ const Overview = () => {
         <Flex justify="flex-start" margin="0 0 50px 0" className="warning">
           <Alert>
             <Paragraph>
-              Hello Anonymous, your wallet is very low at the moment, try fun it
+              Hello Anonymous, your wallet is very low at the moment, try fund it
             </Paragraph>
           </Alert>
+        </Flex>
+
+        <Flex className="balance" margin="0 0 50px 0" justify="flex-start">
+          <Header4 color="#fff"> Your balance</Header4>
+          <Flex margin="10px 0 0 0" width=" max-content">
+            <Header3 color="#de8430"># 200000</Header3>
+          </Flex>
         </Flex>
 
         <Grid gridCol="repeat(auto-fill,minmax(300px ,1fr))" gap="50px 30px ">

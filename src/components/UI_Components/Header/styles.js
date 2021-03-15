@@ -6,6 +6,7 @@ export const Styles = styled.header`
   width: 100%;
   position: fixed;
   background: white;
+  z-index: 100;
   right: 0;
   left: 0;
   top: 0;
