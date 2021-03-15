@@ -9,7 +9,7 @@ import Deposite from "../src/components/pages/Dashboard/deposite";
 import Withdraw from "../src/components/pages/Dashboard/withdraw";
 import Transfer from "../src/components/pages/Dashboard/transfer";
 import Settings from "../src/components/pages/Dashboard/Settings";
-import Wallet from "../src/components/pages/Dashboard/wallet";
+import Transactions from "../src/components/pages/Dashboard/Transactions";
 
 import reportWebVitals from "./reportWebVitals";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
@@ -30,7 +30,7 @@ ReactDOM.render(
         <Route path="/dashboard/deposite" component={Deposite} />
         <Route path="/dashboard/withdraw" component={Withdraw} />
         <Route path="/dashboard/transfer" component={Transfer} />
-        <Route path="/dashboard/wallet" component={Wallet} />
+        <Route path="/dashboard/transactions" component={Transactions} />
         <Route path="/dashboard/settings" component={Settings} />
         <Route path="/dashboard" component={Overview} />
         <Route component={Error} />

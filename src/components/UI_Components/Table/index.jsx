@@ -4,7 +4,6 @@ import { generateID } from "../../../lib/generateID";
 import PropTypes from "prop-types";
 import { OverFlowScrollBar } from "../OverflowScroll/styles";
 import Pagination from "../Paginator";
-// import NoData from "../NoData";
 
 const CustomTable = ({
   tableBody,

@@ -1,11 +1,4 @@
-/*
- * component: generateID
- * author: Obidi Isaac
- * Date: May 13th, 2020
- * EmBED Helpers - generateID component
- */
-
-export const generateID = length => {
+export const generateID = (length) => {
   if (length < 8 || length > 20) {
     alert("length must be a whole number and between 8 and 20");
     return;
@@ -31,7 +24,7 @@ export const generateID = length => {
       "g",
       "h",
       "i",
-      "j"
+      "j",
     ];
 
     return characters[Math.floor(Math.random() * characters.length)];

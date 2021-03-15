@@ -1,10 +1,3 @@
-/*
- * component: Pagination
- * author: Obidi Isaac
- * Date: April 13th, 2020
- * EmBED pagination component
- */
-
 import React from "react";
 import PropTypes from "prop-types";
 import { PaginatorStyles } from "./styles";
@@ -15,12 +8,12 @@ const propTypes = {
   items: PropTypes.array.isRequired,
   onChangePage: PropTypes.func.isRequired,
   initialPage: PropTypes.number,
-  pageSize: PropTypes.number
+  pageSize: PropTypes.number,
 };
 
 const defaultProps = {
   initialPage: 1,
-  pageSize: 5
+  pageSize: 5,
 };
 
 class Pagination extends React.Component {
@@ -84,7 +77,7 @@ class Pagination extends React.Component {
     let startIndex = (currentPage - 1) * pageSize;
     let endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
     let pages = [...Array(endPage + 1 - startPage).keys()].map(
-      i => startPage + i
+      (i) => startPage + i
     );
 
     return {
@@ -96,7 +89,7 @@ class Pagination extends React.Component {
       endPage: endPage,
       startIndex: startIndex,
       endIndex: endIndex,
-      pages: pages
+      pages: pages,
     };
   }
 
@@ -129,7 +122,8 @@ class Pagination extends React.Component {
             <li
               onClick={() => this.setPage(page)}
               key={generateID(14)}
-              className={pager.currentPage === page ? "active" : ""}>
+              className={pager.currentPage === page ? "active" : ""}
+            >
               <a>{page}</a>
             </li>
           ))}
@@ -137,7 +131,8 @@ class Pagination extends React.Component {
             <li
               className={
                 pager.currentPage === pager.totalPages ? "disabled" : ""
-              }>
+              }
+            >
               <a onClick={() => this.setPage(pager.currentPage + 1)}>
                 <LessThanIcon />
               </a>
@@ -147,7 +142,8 @@ class Pagination extends React.Component {
             <li
               className={
                 pager.currentPage === pager.totalPages ? "disabled" : ""
-              }>
+              }
+            >
               <a onClick={() => this.setPage(pager.totalPages)}>Last</a>
             </li>
           )}

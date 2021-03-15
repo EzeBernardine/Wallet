@@ -1,14 +1,7 @@
 import { Styles } from "./styles";
-// import { useState } from "react";
-import { Flex, Frame, Grid } from "../../../UI_Components/Box/styles";
-import {
-  Header2,
-  Paragraph,
-  Header5,
-  Span,
-  Header3,
-} from "../../../UI_Components/FontSize/styles";
-// import { Link } from "react-router-dom";
+import { Flex } from "../../../UI_Components/Box/styles";
+import { Paragraph, Header5 } from "../../../UI_Components/FontSize/styles";
+
 import Layout from "../../../UI_Components/Layout";
 import CustomTable from "../../../UI_Components/Table";
 
@@ -73,7 +66,7 @@ const Deposite = () => {
   return (
     <Layout>
       <Styles className="App">
-        <Flex margin="0 0 30px 0" justify="flex-start" >
+        <Flex margin="0 0 30px 0" justify="flex-start">
           <Flex margin="0 0 30px 0" justify="flex-start">
             <Header5 color="#de8430" spacing=".4rem" bold>
               Transfers

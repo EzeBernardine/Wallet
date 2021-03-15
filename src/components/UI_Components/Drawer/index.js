@@ -37,7 +37,7 @@ const Drawer = () => {
     },
     {
       name: "Transaction",
-      href: "/dashboard/wallet",
+      href: "/dashboard/transactions",
       icon: <TransactionIcon width="20px" height="20px" />,
     },
     {
