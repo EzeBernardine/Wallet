@@ -85,7 +85,7 @@ export const Paragraph = styled.p`
   font-weight: ${({ bold, weight }) =>
     weight ? weight : bold ? "bold" : "normal"};
   @media (max-width: 700px) {
-    line-height: 32px;
+    line-height: 28px;
     font-size: 16px;
   }
 `;
@@ -113,7 +113,7 @@ export const Span = styled.span`
   font-weight: ${({ bold, weight }) =>
     weight ? weight : bold ? "bold" : "350"};
   @media (max-width: 700px) {
-    line-height: 32px;
+    line-height: 20px;
     font-size: 14px;
     letter-spacing: 0.75px;
     font-style: normal;

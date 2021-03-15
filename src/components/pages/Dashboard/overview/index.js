@@ -2,7 +2,7 @@ import { Styles } from "./styles";
 import { Flex, Grid } from "../../../UI_Components/Box/styles";
 import {
   Header4,
-  Paragraph,
+  Span,
   Header3,
 } from "../../../UI_Components/FontSize/styles";
 import Layout from "../../../UI_Components/Layout";
@@ -28,19 +28,28 @@ const Overview = () => {
       <Styles className="App">
         <Flex justify="flex-start" margin="0 0 50px 0" className="warning">
           <Alert>
-            <Paragraph>
-              Hello Anonymous, your wallet is very low at the moment, try fund it
-            </Paragraph>
+            <Span>
+              Hello Anonymous, your wallet is very low at the moment, try fund
+              it
+            </Span>
           </Alert>
         </Flex>
 
-        <Flex className="balance" margin="0 0 50px 0" justify="flex-start">
+        <Flex
+          className="balance"
+          margin="0 0 50px 0"
+          justify="flex-start"
+          maxWidth="320px"
+        >
           <Header4 color="#fff"> Your balance</Header4>
           <Flex margin="10px 0 0 0" width=" max-content">
             <Header3 color="#de8430"># 200000</Header3>
           </Flex>
         </Flex>
 
+        <Flex margin="0 0 50px 0" justify="flex-start">
+          <Header4 color="#5b5551">Overview of your transactions</Header4>
+        </Flex>
         <Grid gridCol="repeat(auto-fill,minmax(300px ,1fr))" gap="50px 30px ">
           {Card.map(({ item, count }) => (
             <Flex className="card" flexDir="column" key={item}>
