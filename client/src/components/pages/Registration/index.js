@@ -11,9 +11,12 @@ import * as yup from "yup";
 import { useHistory } from "react-router-dom";
 // import axios from "axios";
 import API from "../../../lib/api";
+import Alert from "../../UI_Components/Alert";
+import { useState } from "react";
 
 const Registration = () => {
   let history = useHistory();
+  const [loginStatus, setLoginStatus] = useState("");
 
   const validationSchema = yup.object().shape({
     username: yup.string().min(2).required("Provide a name"),
@@ -27,6 +30,14 @@ const Registration = () => {
             Wallet
           </Header4>
         </Link>
+
+        {loginStatus?.length > 0 && (
+          <Flex margin="20px auto 0" maxWidth="600px" justify="flex-start">
+            <Alert type="success">
+              <Paragraph>{loginStatus}</Paragraph>
+            </Alert>
+          </Flex>
+        )}
       </Flex>
 
       <Flex align="stretch" margin="70px 0">
@@ -41,10 +52,14 @@ const Registration = () => {
               await API.post("user/register", {
                 username,
                 password,
-              });
-
-            
-              history.push("/login");
+              })
+                .then(({ data }) => {
+                  setLoginStatus(data.message);
+                  setTimeout(() => {
+                    history.push("/login");
+                  }, 1000);
+                })
+                .catch((err) => setLoginStatus(err.response.data.error));
             }}
           >
             {({ handleChange, values: { username, password } }) => (
@@ -52,6 +67,7 @@ const Registration = () => {
                 <Header4 color="#3e3936" lineHeight="5rem">
                   Register
                 </Header4>
+
                 <Paragraph
                   color="#2b180d"
                   size="14px"

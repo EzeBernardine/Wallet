@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Styles = styled.div`
   width: 100%;
   position: relative;
-  padding: 10px 30px;
+  padding: 10px 30px 10px 40px;
   border-radius: 4px;
   border: ${({ type }) =>
     type === "success" ? "1px solid #2bac205e" : "1px solid #de84305e"};

@@ -3,6 +3,7 @@ import { Styles } from "./styles";
 import { AlertIcon, SuccessIcon } from "../../assest/svg";
 
 const Alert = ({ type, children }) => {
+  // const [status, setStatus] = useState(false);
   return (
     <Styles className="App" type={type}>
       {type === "success" ? (
