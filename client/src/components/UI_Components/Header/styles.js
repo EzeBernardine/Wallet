@@ -14,8 +14,10 @@ export const Styles = styled.header`
     span {
       margin-left: 15px;
     }
-    a{
-      display: flex
+    button{
+      display: flex;
+      padding: 0;
+      background: transparent;
     }
   }
   @media (max-width: 500px) {

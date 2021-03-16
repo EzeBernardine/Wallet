@@ -1,18 +1,22 @@
 import { Styles } from "./styles";
 import { Flex } from "../../UI_Components/Box/styles";
 import { Header5, Span, Header4 } from "../../UI_Components/FontSize/styles";
-import { Link } from "react-router-dom";
 import { LogoutIcon } from "../../assest/svg";
+import { useHistory } from "react-router-dom";
+import useLocalStorageHook from "../../../lib/customHook";
 
 const Header = () => {
+  // const history = useHistory();
+  
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+  };
   return (
     <Styles className="App">
       <Flex margin="0 0 0 0" justify="space-between" height="100%">
-        <Link to="./">
-          <Header4 color="#673a1e" bold>
-            Wallet
-          </Header4>
-        </Link>
+        <Header4 color="#673a1e" bold>
+          Wallet
+        </Header4>
 
         <Flex height="100%" width="max-content" justify="flex-end">
           <Flex width="max-content">
@@ -23,9 +27,9 @@ const Header = () => {
           </Flex>
 
           <Flex width="max-content" justify="flex-end" margin="0 0 0 25px">
-            <Link to="/">
+            <button onClick={handleLogout}>
               <LogoutIcon color="#918e8c" width="20px" height="20px" />
-            </Link>
+            </button>
           </Flex>
         </Flex>
       </Flex>

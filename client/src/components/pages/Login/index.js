@@ -8,11 +8,11 @@ import API from "../../../lib/api";
 import { useHistory } from "react-router-dom";
 import Alert from "../../UI_Components/Alert";
 import { useState } from "react";
-import useLocalStorageHook from "../../../lib/costomeHook";
+import useLocalStorageHook from "../../../lib/customHook";
 
 const Login = () => {
   let history = useHistory();
-  const { state, setState } = useLocalStorageHook("token");
+  const { setState } = useLocalStorageHook("token");
   const [loginStaus, setLoginStaus] = useState("");
 
   const validationSchema = yup.object().shape({

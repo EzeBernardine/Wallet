@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <Styles className="App">
-      <Flex margin='50px 0'>
+      <Flex margin="50px 0">
         <Flex width="40%" className="title" justify="flex-start">
           <Header1 size="5rem" color="#673a1e" lineHeight="6rem">
             Wallet <br />
@@ -26,7 +26,7 @@ const Home = () => {
           </Flex>
         </Flex>
 
-        <Flex width="60%" >
+        <Flex width="60%">
           <Frame width="70%" height="auto">
             <img src={Image} alt="wallet" />
           </Frame>

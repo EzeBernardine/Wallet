@@ -1,14 +1,10 @@
 import styled from "styled-components";
-import Image from "../../assest/bricks.png";
 
 export const Styles = styled.div`
   min-height: 100vh;
   padding: 0 5%5%;
 
   > div {
-    /* > .image {
-          background-image: url(${Image})
-      } */
     form {
       padding: 30px;
       box-shadow: 0px 0px 14px -2px #5b2e061f;

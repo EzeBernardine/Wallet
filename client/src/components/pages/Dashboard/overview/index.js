@@ -1,6 +1,7 @@
 import { Styles } from "./styles";
 import { Flex, Grid } from "../../../UI_Components/Box/styles";
 import {
+  Header5,
   Header4,
   Span,
   Header3,
@@ -8,18 +9,22 @@ import {
 import Layout from "../../../UI_Components/Layout";
 import Alert from "../../../UI_Components/Alert";
 import BalanceCard from "./Card";
+import { TransferIcon, WithdrawalIcon, DepositIcon } from "../../../assest/svg";
 
 const Overview = () => {
   const Card = [
     {
+      icon: <WithdrawalIcon width="40px" height="40px" color="#de8430" />,
       item: "Withdrawal",
       count: 30,
     },
     {
+      icon: <DepositIcon width="40px" height="40px" color="#de8430" />,
       item: "Deposit",
       count: 20,
     },
     {
+      icon: <TransferIcon width="40px" height="40px" color="#de8430" />,
       item: "Transfer",
       count: 0,
     },
@@ -73,10 +78,13 @@ const Overview = () => {
           <Header4 color="#5b5551">Overview of your transactions</Header4>
         </Flex>
         <Grid gridCol="repeat(auto-fill,minmax(300px ,1fr))" gap="50px 30px ">
-          {Card.map(({ item, count }) => (
+          {Card.map(({ item, count, icon }) => (
             <Flex className="card" flexDir="column" key={item}>
-              <Header3 color="#673a1e">{count}</Header3>
-              <Header4 color="#5b5551">{item}</Header4>
+              <Flex margin="20px 0">{icon}</Flex>
+              <Header5 color="#5b5551">{item}</Header5>
+              <Flex margin="20px 0">
+                <Header3 color="#673a1e">{count}</Header3>
+              </Flex>
             </Flex>
           ))}
         </Grid>

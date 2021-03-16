@@ -1,15 +1,10 @@
 import { Styles } from "./styles";
 import { Flex, Grid } from "../../UI_Components/Box/styles";
-import {
-  // Header2,
-  Paragraph,
-  Header4,
-} from "../../UI_Components/FontSize/styles";
+import { Span, Paragraph, Header4 } from "../../UI_Components/FontSize/styles";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import { useHistory } from "react-router-dom";
-// import axios from "axios";
 import API from "../../../lib/api";
 import Alert from "../../UI_Components/Alert";
 import { useState } from "react";
@@ -116,6 +111,30 @@ const Registration = () => {
                   </button>
                   {/* </Link> */}
                 </div>
+
+                <Flex margin=" 15px 0 0 0">
+                  <Span
+                    color="#2b180d"
+                    size="14px"
+                    lineHeight="24px"
+                    spacing=".02rem"
+                  >
+                    Have an account?
+                  </Span>
+                  <Link to="/login">
+                    <Flex width="max-content" margin="0 0 0 10px">
+                      <Span
+                        color="#aa6524"
+                        size="14px"
+                        lineHeight="24px"
+                        spacing=".02rem"
+                        bold
+                      >
+                        Log in
+                      </Span>
+                    </Flex>
+                  </Link>
+                </Flex>
               </Form>
             )}
           </Formik>
