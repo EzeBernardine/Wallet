@@ -23,7 +23,7 @@ const Card = () => {
           {/* m */}
         </Flex>
 
-        <Flex margin="20px 0 0 0" justify="flex-start" className='amount'>
+        <Flex margin="10px 0 0 0" justify="flex-start" className='amount'>
           <Frame width="40px" height="30px">
             <img src={Image} alt="icon" />
           </Frame>
@@ -32,14 +32,14 @@ const Card = () => {
           </Flex>
         </Flex>
 
-        <Flex margin="10px 0 0 0" justify="space-between">
+        <Flex margin="5px 0 0 0" justify="space-between">
           <Header4  size='23px' color="#5b5551"> 0000 </Header4>
           <Header4  size='23px' color="#5b5551"> 0000 </Header4>
           <Header4  size='23px' color="#5b5551"> 0000 </Header4>
           <Header4  size='23px' color="#5b5551"> 0000 </Header4>
         </Flex>
 
-        <Flex margin="15px 0 0 0" justify="flex-start">
+        <Flex margin="10px 0 0 0" justify="flex-start">
           <Flex margin="0px 0 0 0" width=" max-content" className="amount">
             <Small color="#5b5551"> 12/12</Small>
           </Flex>

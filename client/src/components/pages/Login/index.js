@@ -52,6 +52,7 @@ const Login = () => {
               })
                 .then(({ data }) => {
                   setState(data.token);
+
                   history.push("./dashboard");
                 })
                 .catch((err) => setLoginStaus(err.response.data.message));
