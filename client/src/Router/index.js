@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Home from "../../src/components/pages/home";
 import Registration from "../../src/components/pages/Registration";
@@ -10,7 +10,7 @@ import Withdraw from "../../src/components/pages/Dashboard/withdraw";
 import Transfer from "../../src/components/pages/Dashboard/transfer";
 import Settings from "../../src/components/pages/Dashboard/Settings";
 import Transactions from "../../src/components/pages/Dashboard/Transactions";
-import { isLogin } from "../lib/islogin";
+// import { isLogin } from "../lib/islogin";
 
 const Error = () => {
   return <p>404 page</p>;

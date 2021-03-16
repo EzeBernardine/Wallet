@@ -1,7 +1,7 @@
 import { Styles } from "./styles";
 import { Flex, Frame } from "../../../../UI_Components/Box/styles";
 import {
-  Header3,
+
   Small,
   Bold,
   Header4,
