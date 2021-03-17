@@ -32,7 +32,7 @@ const Overview = () => {
   return (
     <Layout>
       <Styles className="App">
-        <Flex justify="flex-start" margin="0 0 50px 0" className="warning">
+        <Flex justify="flex-start" margin="0 0 0 0" className="warning">
           <Alert>
             <Span>
               Hello Anonymous, your wallet is very low at the moment, try fund

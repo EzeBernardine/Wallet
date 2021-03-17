@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Styles = styled.div`
   width: 100%;
+  margin-bottom: 30px;
   position: relative;
   padding: 10px 30px 10px 40px;
   border-radius: 4px;

@@ -50,7 +50,7 @@ const Transfer = () => {
                   </Paragraph>
                 </Flex>
 
-                <Flex justify="flex-start" margin="30px 0">
+                < >
                   {true ? (
                     <Alert type="success">
                       <Flex justify="flex-start" className="recipient">
@@ -87,7 +87,7 @@ const Transfer = () => {
                       </Flex>
                     </Alert>
                   )}
-                </Flex>
+                </>
 
                 <Grid className="input-container" gap="18px">
                   <div>
@@ -104,7 +104,7 @@ const Transfer = () => {
                   </div>
 
                   <div>
-                    <Flex className="input-wrap"  justify="space-between">
+                    <Flex className="input-wrap" justify="space-between">
                       <label htmlFor="accountnumber">Recepient Account</label>
                       <Field
                         type="text"
@@ -117,7 +117,7 @@ const Transfer = () => {
                   </div>
 
                   <div>
-                    <Flex className="input-wrap"  justify="space-between">
+                    <Flex className="input-wrap" justify="space-between">
                       <label htmlFor="comment">Comment</label>
                       <Field
                         type="text"
