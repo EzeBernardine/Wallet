@@ -13,7 +13,7 @@ const Alert = ({ type, duration = 3000, reCall, children }) => {
   useEffect(() => {
     TimeOut();
 
-    return (TimeOut) => clearTimeout(TimeOut());
+    return () => clearTimeout(TimeOut());
   });
   return (
     <>
