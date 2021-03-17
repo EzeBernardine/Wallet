@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f0ff3d5a.chunk.css",
+    "main.js": "/static/js/main.ac6cb35a.chunk.js",
+    "main.js.map": "/static/js/main.ac6cb35a.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c920629d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c920629d.js.map",
+    "static/js/2.d0aa8c8f.chunk.js": "/static/js/2.d0aa8c8f.chunk.js",
+    "static/js/2.d0aa8c8f.chunk.js.map": "/static/js/2.d0aa8c8f.chunk.js.map",
+    "static/js/3.94327502.chunk.js": "/static/js/3.94327502.chunk.js",
+    "static/js/3.94327502.chunk.js.map": "/static/js/3.94327502.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.f0ff3d5a.chunk.css.map": "/static/css/main.f0ff3d5a.chunk.css.map",
+    "static/js/2.d0aa8c8f.chunk.js.LICENSE.txt": "/static/js/2.d0aa8c8f.chunk.js.LICENSE.txt",
+    "static/media/black-beautiful-ladies-smiling 1.e97ae37e.png": "/static/media/black-beautiful-ladies-smiling 1.e97ae37e.png",
+    "static/media/wallet1.76b6c56f.png": "/static/media/wallet1.76b6c56f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c920629d.js",
+    "static/js/2.d0aa8c8f.chunk.js",
+    "static/css/main.f0ff3d5a.chunk.css",
+    "static/js/main.ac6cb35a.chunk.js"
+  ]
+}
