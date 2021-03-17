@@ -9,7 +9,7 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import { useState } from "react";
 
-const Settings = () => {
+const Profile = () => {
   const [tabType, setTabType] = useState("Profile Update");
 
   const validationSchema = yup.object().shape({
@@ -133,4 +133,4 @@ const Settings = () => {
   );
 };
 
-export default Settings;
+export default Profile;

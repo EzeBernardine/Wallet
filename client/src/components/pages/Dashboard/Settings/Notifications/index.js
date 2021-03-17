@@ -8,21 +8,25 @@ import {
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import { useState } from "react";
+import Switch from "../../../../UI_Components/Switch";
 
-const Settings = () => {
-  const [tabType, setTabType] = useState("Profile Update");
-
-  const validationSchema = yup.object().shape({
-    title: yup.string().min(2).required("Provide title"),
-    accountnumber: yup.string().min(2).required("Provide valid email"),
-    CVV: yup.string().min(4).max(4).required("Provide valid CVV"),
-  });
-
+const Notifications = () => {
   return (
     <Styles className="App">
-      
+      <Flex margin="50px 0">
+        <Header5 color="#5b5551">
+          Get email notifications for all your transactons?
+        </Header5>
+        <Flex width="max-content" margin="0 0 0 20px">
+          <Switch
+            initialState={true}
+            color="#de8430"
+            click={(checked) => console.log(checked)}
+          />
+        </Flex>
+      </Flex>
     </Styles>
   );
 };
 
-export default Settings;
+export default Notifications;

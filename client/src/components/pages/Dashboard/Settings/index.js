@@ -7,6 +7,7 @@ import Layout from "../../../UI_Components/Layout";
 import Tabs from "../../../UI_Components/Tabs";
 import { useState } from "react";
 import Profile from "./Profile";
+import Notifications from "./Notifications";
 // import {
 //   VerificattionIcon,
 //   ProfileIcon,
@@ -40,7 +41,9 @@ const Settings = () => {
           </div>
           <div label="Security">fse</div>
           <div label="Account Verification">dvs</div>
-          <div label="Notification">Notifications</div>
+          <div label="Notification">
+            <Notifications />
+          </div>
         </Tabs>
       </Styles>
     </Layout>
