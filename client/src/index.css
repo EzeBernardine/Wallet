@@ -45,8 +45,9 @@ input {
   border: none;
 }
 
-input:focus {
-  border: 1px solid #de8430;
+input:focus, textarea:focus {
+  border: 1px solid #de8430 !important;
+  outline: none;
 }
 button {
   color: white;

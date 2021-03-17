@@ -33,7 +33,7 @@ const Profile = () => {
               </Paragraph>
             </Flex>
 
-            <Grid className="input-container" gap="1px">
+            <Grid className="input-container" gap="10px">
               <Flex justify="space-between">
                 <Flex width="calc( 50% - 10px )">
                   <Flex className="input-wrap" flexDir="column" align="stretch">
@@ -112,15 +112,17 @@ const Profile = () => {
               <div>
                 <Flex className="input-wrap" justify="space-between">
                   <label htmlFor="comment">Address</label>
-                  <Field
-                    type="text"
-                    name="comment"
-                    id="comment"
-                    component="textarea"
-                    placeholder="Account Number"
-                  />
+                  <InputStyles>
+                    <Field
+                      type="text"
+                      name="comment"
+                      id="comment"
+                      component="textarea"
+                      placeholder="Account Number"
+                    />
+                    <ErrorMessage name="comment" component="div" />
+                  </InputStyles>
                 </Flex>
-                <ErrorMessage name="comment" component="div" />
               </div>
 
               {/* ------------------button section-------------- */}

@@ -4,6 +4,7 @@ export const InputStyles = styled.div`
   position: relative;
   padding-bottom: 20px;
   display: flex;
+  flex: 1;
   > input {
     flex: 1;
   }

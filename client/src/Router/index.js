@@ -23,14 +23,25 @@ const PrivateRoute = (props) => {
   );
 };
 
+const PublicRoute = (props) => {
+  return isLogin() ? (
+    <Redirect to="/dashboard" />
+  ) : (
+    <Route path={props.path} exact={props.exact} component={props.component} />
+  );
+};
+
 const Router = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={Home} exact />
+        {/* route the user to the dashboard on click of the home page if he has active token, else, remain on the home page */}
+        <PublicRoute path="/" component={Home} exact />
+
         <Route path="/login" component={Login} exact />
         <Route path="/registration" component={Registration} />
 
+        {/* route the user to the dashboard if he is logged in, else, take him to the login screen*/}
         <PrivateRoute path="/dashboard/deposit" component={Deposit} />
         <PrivateRoute path="/dashboard/withdraw" component={Withdraw} />
         <PrivateRoute path="/dashboard/transfer" component={Transfer} />

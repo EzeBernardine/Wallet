@@ -29,16 +29,16 @@ const Login = () => {
           </Header4>
         </Link>
 
-        {loginStaus.length > 0 && (
+        {loginStaus?.length > 0 && (
           <Flex margin="20px auto 0" maxWidth="600px" justify="flex-start">
-            <Alert type="error">
+            <Alert type="error" >
               <Paragraph>{loginStaus}</Paragraph>
             </Alert>
           </Flex>
         )}
       </Flex>
 
-      <Flex align="stretch" margin="70px 0">
+      <Flex align="stretch" margin="50px 0">
         <Flex width="100%">
           <Formik
             initialValues={{
@@ -51,12 +51,17 @@ const Login = () => {
                 username,
                 password,
               })
-                .then(({ data }) => {
-                  setState(data.token);
-
+                .then((res) => {
+                  setState(res.data.token);
+                  setLoginStaus('');
                   history.push("./dashboard");
                 })
-                .catch((err) => setLoginStaus(err.response.data.message));
+                .catch((err) => {
+                  setLoginStaus('');
+                  setLoginStaus(err.response.data.message);
+                });
+
+                
             }}
           >
             {({ handleChange, values: { username, password } }) => (

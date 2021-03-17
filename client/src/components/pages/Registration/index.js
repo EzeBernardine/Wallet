@@ -7,7 +7,7 @@ import * as yup from "yup";
 import { useHistory } from "react-router-dom";
 import API from "../../../lib/api";
 import Alert from "../../UI_Components/Alert";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Registration = () => {
   let history = useHistory();
@@ -16,6 +16,15 @@ const Registration = () => {
   const validationSchema = yup.object().shape({
     username: yup.string().min(2).required("Provide a name"),
     password: yup.string().min(2).required("Provide valid password"),
+  });
+
+  const handleDisplayLogin = () =>
+    setTimeout(() => {
+      history.push("/login");
+    }, 2000);
+
+  useEffect(() => {
+    return () => clearTimeout(handleDisplayLogin());
   });
   return (
     <Styles className="Registration">
@@ -28,7 +37,11 @@ const Registration = () => {
 
         {loginStatus?.length > 0 && (
           <Flex margin="20px auto 0" maxWidth="600px" justify="flex-start">
-            <Alert type="success">
+            <Alert
+              type={`${
+                loginStatus === "User account created" ? "success" : "error"
+              }`}
+            >
               <Paragraph>{loginStatus}</Paragraph>
             </Alert>
           </Flex>
@@ -50,11 +63,12 @@ const Registration = () => {
               })
                 .then(({ data }) => {
                   setLoginStatus(data.message);
-                  setTimeout(() => {
-                    history.push("/login");
-                  }, 1000);
+                  handleDisplayLogin();
                 })
-                .catch((err) => setLoginStatus(err.response.data.error));
+                .catch((err) => {
+                  setLoginStatus("");
+                  setLoginStatus(err.response.data.error);
+                });
             }}
           >
             {({ handleChange, values: { username, password } }) => (
