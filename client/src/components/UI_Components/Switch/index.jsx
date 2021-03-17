@@ -1,17 +1,17 @@
 /*
  * component: switch
  * author: Eze Bernardine May
- * Date: April 16th, 2020
- * EmBED switch component
+ * Date: March 16th, 2021
+ * Switch component
  */
 
-import React, { useState, useEffect, createRef } from "react";
+import React, { useState } from "react";
 import { SwitchWrap } from "./switch.styles";
 
 const Switch = ({ click, initialState, color }) => {
   const [switched, setSwitched] = useState(initialState || null);
 
-  const handleSwitch = e => {
+  const handleSwitch = (e) => {
     setSwitched(e.target.checked);
     click(e.target.checked);
   };

@@ -655,7 +655,7 @@ export const TransactionIcon = ({ width, height, color }) => (
   </svg>
 );
 
-export const Notificationcon = ({ width, height, color }) => (
+export const NotificationIcon = ({ width, height, color }) => (
   <svg
     width={width || 52}
     height={height || 52}

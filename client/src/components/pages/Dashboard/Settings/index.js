@@ -11,7 +11,7 @@ import Notifications from "./Notifications";
 // import {
 //   VerificattionIcon,
 //   ProfileIcon,
-//   Notificationcon,
+//   NotificationIcon,
 //   SecurityIcon,
 // } from "../../../assest/svg";
 
@@ -33,7 +33,7 @@ const Settings = () => {
           //   `${(<VerificattionIcon />)}` ,
           //   `${(<SecurityIcon />)}` ,
           //   `${(<ProfileIcon />)}` ,
-          //   `${(<Notificationcon />)}` ,
+          //   `${(<NotificationIcon />)}` ,
           // ]}
         >
           <div label="Profile">
