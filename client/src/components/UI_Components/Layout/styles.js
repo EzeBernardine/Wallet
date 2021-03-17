@@ -16,7 +16,7 @@ export const Styles = styled.div`
     margin-top: 136px;
     > section {
       margin: 20px 0;
-      padding: 50px 5%;
+      padding: 20px 5%;
     }
   }
 `;

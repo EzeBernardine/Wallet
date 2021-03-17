@@ -63,7 +63,7 @@ const Deposit = () => {
         <Flex margin="0 0 30px 0" justify="flex-start">
           <Flex margin="0 0 30px 0" justify="flex-start">
             <Header5 color="#de8430" spacing=".4rem" bold>
-              Transfers
+              Transactions
             </Header5>
           </Flex>
 
