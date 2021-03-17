@@ -107,15 +107,15 @@ class Pagination extends React.Component {
         <ul className="pagination">
           {firstLast && (
             <li className={pager.currentPage === 1 ? "disabled" : ""}>
-              <a onClick={() => this.setPage(1)}>First</a>
+              <span onClick={() => this.setPage(1)} >First</span>
             </li>
           )}
           {prevNext && (
             <li className={pager.currentPage === 1 ? "disabled" : ""}>
-              <a onClick={() => this.setPage(pager.currentPage - 1)}>
+              <span onClick={() => this.setPage(pager.currentPage - 1)}>
                 {" "}
                 <GreaterThanIcon />{" "}
-              </a>
+              </span>
             </li>
           )}
           {pager.pages.map((page, index) => (
@@ -124,7 +124,7 @@ class Pagination extends React.Component {
               key={generateID(14)}
               className={pager.currentPage === page ? "active" : ""}
             >
-              <a>{page}</a>
+              <span>{page}</span>
             </li>
           ))}
           {prevNext && (
@@ -133,9 +133,9 @@ class Pagination extends React.Component {
                 pager.currentPage === pager.totalPages ? "disabled" : ""
               }
             >
-              <a onClick={() => this.setPage(pager.currentPage + 1)}>
+              <span onClick={() => this.setPage(pager.currentPage + 1)}>
                 <LessThanIcon />
-              </a>
+              </span>
             </li>
           )}
           {firstLast && (
@@ -144,7 +144,7 @@ class Pagination extends React.Component {
                 pager.currentPage === pager.totalPages ? "disabled" : ""
               }
             >
-              <a onClick={() => this.setPage(pager.totalPages)}>Last</a>
+              <span onClick={() => this.setPage(pager.totalPages)}>Last</span>
             </li>
           )}
         </ul>

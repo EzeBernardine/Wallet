@@ -2,12 +2,8 @@ import { Styles } from "./styles";
 import { Flex } from "../../UI_Components/Box/styles";
 import { Header5, Span, Header4 } from "../../UI_Components/FontSize/styles";
 import { LogoutIcon } from "../../assest/svg";
-import { useHistory } from "react-router-dom";
-import useLocalStorageHook from "../../../lib/customHook";
 
 const Header = () => {
-  // const history = useHistory();
-  
   const handleLogout = () => {
     localStorage.removeItem("token");
   };

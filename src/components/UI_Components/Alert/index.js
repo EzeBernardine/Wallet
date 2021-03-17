@@ -14,7 +14,7 @@ const Alert = ({ type, duration = 3000, reCall, children }) => {
     TimeOut();
 
     return () => clearTimeout(TimeOut());
-  }, [visible]);
+  }, [visible, TimeOut]);
   return (
     <>
       {visible ? (

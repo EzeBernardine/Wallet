@@ -17,7 +17,7 @@ import Security from "./Security";
 // } from "../../../assest/svg";
 
 const Settings = () => {
-  const [tabType, setTabType] = useState("Profile Update");
+  const [, setTabType] = useState("Profile Update");
 
   return (
     <Layout>
