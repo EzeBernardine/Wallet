@@ -1,25 +1,36 @@
 import { Styles } from "./styles";
 import { Flex } from "../../../../UI_Components/Box/styles";
-import { Header5 } from "../../../../UI_Components/FontSize/styles";
-import { NotificationIcon } from "../../../../assest/svg";
+import { Span } from "../../../../UI_Components/FontSize/styles";
 import Switch from "../../../../UI_Components/Switch";
 
 const Notifications = () => {
   return (
     <Styles className="App">
-      <Flex margin="50px 0">
-        <Flex margin="0 10px 0 0" width="max-content">
-          <NotificationIcon height="40px" width="20px" color="#5b5551" />
+      <Flex margin="50px 0 " flexDir="column" align="flex-start">
+        <Flex margin="10px 0 0" maxWidth="600px">
+          <Span color="#5b5551">
+            Get email notifications for all your transactons?
+          </Span>
+          <Flex width="max-content" margin="0 0 0 auto">
+            <Switch
+              initialState={true}
+              color="#de8430"
+              click={(checked) => console.log(checked)}
+            />
+          </Flex>
         </Flex>
-        <Header5 color="#5b5551">
-          Get email notifications for all your transactons?
-        </Header5>
-        <Flex width="max-content" margin="0 0 0 20px">
-          <Switch
-            initialState={true}
-            color="#de8430"
-            click={(checked) => console.log(checked)}
-          />
+
+        <Flex margin="10px 0 0 " maxWidth="600px">
+          <Span color="#5b5551">
+            Get sms notifications for all your transactons?
+          </Span>
+          <Flex width="max-content" margin="0 0 0 auto">
+            <Switch
+              initialState={true}
+              color="#de8430"
+              click={(checked) => console.log(checked)}
+            />
+          </Flex>
         </Flex>
       </Flex>
     </Styles>
