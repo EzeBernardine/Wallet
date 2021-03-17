@@ -10,10 +10,17 @@ import Withdraw from "../../src/components/pages/Dashboard/withdraw";
 import Transfer from "../../src/components/pages/Dashboard/transfer";
 import Settings from "../../src/components/pages/Dashboard/Settings";
 import Transactions from "../../src/components/pages/Dashboard/Transactions";
-// import { isLogin } from "../lib/islogin";
+import { isLogin } from "../lib/islogin";
 
 const Error = () => {
   return <p>404 page</p>;
+};
+const PrivateRoute = (props) => {
+  return isLogin() ? (
+    <Route path={props.path} exact={props.exact} component={props.component} />
+  ) : (
+    <Redirect to="/login" />
+  );
 };
 
 const Router = () => {
@@ -24,12 +31,12 @@ const Router = () => {
         <Route path="/login" component={Login} exact />
         <Route path="/registration" component={Registration} />
 
-        <Route path="/dashboard/deposit" component={Deposit} />
-        <Route path="/dashboard/withdraw" component={Withdraw} />
-        <Route path="/dashboard/transfer" component={Transfer} />
-        <Route path="/dashboard/transactions" component={Transactions} />
-        <Route path="/dashboard/settings" component={Settings} />
-        <Route path="/dashboard" component={Overview} />
+        <PrivateRoute path="/dashboard/deposit" component={Deposit} />
+        <PrivateRoute path="/dashboard/withdraw" component={Withdraw} />
+        <PrivateRoute path="/dashboard/transfer" component={Transfer} />
+        <PrivateRoute path="/dashboard/transactions" component={Transactions} />
+        <PrivateRoute path="/dashboard/settings" component={Settings} />
+        <PrivateRoute path="/dashboard" component={Overview} />
 
         <Route component={Error} />
       </Switch>

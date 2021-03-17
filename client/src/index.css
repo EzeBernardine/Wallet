@@ -44,6 +44,10 @@ input {
   background-color: transparent;
   border: none;
 }
+
+input:focus {
+  border: 1px solid #de8430;
+}
 button {
   color: white;
   background-color: #de8430;
@@ -56,7 +60,8 @@ button {
 button:hover {
   background-color: #aa6524;
 }
-input, textarea {
+input,
+textarea {
   color: #5b5551;
   padding: 15px;
   resize: none;
@@ -68,10 +73,9 @@ input, textarea {
 textarea {
   min-height: 100px;
 }
-.error {
-  font-size: 10px;
-  color: #de8430;
-}
+/* .error {
+
+} */
 
 *::-webkit-scrollbar {
   width: 5px;

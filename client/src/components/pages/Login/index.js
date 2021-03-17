@@ -1,6 +1,6 @@
 import { Styles } from "./styles";
 import { Flex, Grid } from "../../UI_Components/Box/styles";
-import { Paragraph, Header4 } from "../../UI_Components/FontSize/styles";
+import { Paragraph, Header4, Span } from "../../UI_Components/FontSize/styles";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
@@ -9,6 +9,7 @@ import { useHistory } from "react-router-dom";
 import Alert from "../../UI_Components/Alert";
 import { useState } from "react";
 import useLocalStorageHook from "../../../lib/customHook";
+import { InputStyles } from "../../UI_Components/Input/styles";
 
 const Login = () => {
   let history = useHistory();
@@ -73,7 +74,7 @@ const Login = () => {
                 </Paragraph>
 
                 <Grid className="input-container" gap="18px">
-                  <div>
+                  <InputStyles>
                     <Field
                       type="text"
                       name="username"
@@ -86,9 +87,9 @@ const Login = () => {
                       component="div"
                       className="error"
                     />
-                  </div>
+                  </InputStyles>
 
-                  <div>
+                  <InputStyles>
                     <Field
                       type="text"
                       name="password"
@@ -101,7 +102,7 @@ const Login = () => {
                       component="div"
                       className="error"
                     />
-                  </div>
+                  </InputStyles>
                 </Grid>
 
                 <div className="btn">
@@ -111,6 +112,30 @@ const Login = () => {
                   </button>
                   {/* </Link> */}
                 </div>
+
+                <Flex margin=" 15px 0 0 0">
+                  <Span
+                    color="#2b180d"
+                    size="14px"
+                    lineHeight="24px"
+                    spacing=".02rem"
+                  >
+                    Don't have an account?
+                  </Span>
+                  <Link to="/registration">
+                    <Flex width="max-content" margin="0 0 0 10px">
+                      <Span
+                        color="#aa6524"
+                        size="14px"
+                        lineHeight="24px"
+                        spacing=".02rem"
+                        bold
+                      >
+                        Register
+                      </Span>
+                    </Flex>
+                  </Link>
+                </Flex>
               </Form>
             )}
           </Formik>
