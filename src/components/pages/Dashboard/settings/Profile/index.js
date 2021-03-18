@@ -26,7 +26,7 @@ const Profile = () => {
         {({ handleChange, values: { username, name, city } }) => (
           <Form>
             <Flex margin="0 0 30px 0" justify="flex-start" warning>
-              <Paragraph color="#2b180d" spacing=".015rem" lineHeight="22px">
+              <Paragraph color="#2c2d2d" spacing=".015rem" lineHeight="22px">
                 Transfers on this platform can be either directly, ie to another
                 account user, or to the bank. Just fill in the form and you are
                 good to go.

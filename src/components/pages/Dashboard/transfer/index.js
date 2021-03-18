@@ -40,7 +40,7 @@ const Transfer = () => {
                     </Header5>
                   </Flex>
                   <Paragraph
-                    color="#2b180d"
+                    color="#2c2d2d"
                     spacing=".025rem"
                     lineHeight="25px"
                   >

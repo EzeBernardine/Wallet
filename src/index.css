@@ -74,9 +74,9 @@ textarea {
 textarea {
   min-height: 100px;
 }
-/* .error {
-
-} */
+label, legend {
+  color: #5b5551
+}
 
 *::-webkit-scrollbar {
   width: 5px;

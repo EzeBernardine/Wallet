@@ -41,7 +41,7 @@ const Overview = () => {
           </Alert>
         </Flex>
 
-        <Flex justify="flex-start" margin="0 0 50px 0">
+        <Flex justify="flex-start" margin="0 0 70px 0">
           <BalanceCard />
 
           <Flex
@@ -75,8 +75,9 @@ const Overview = () => {
         </Flex>
 
         <Flex margin="0 0 50px 0" justify="flex-start">
-          <Header4 color="#5b5551">Overview of your transactions</Header4>
+          <Header4 color="#2c2d2d">Overview of your transactions</Header4>
         </Flex>
+
         <Grid gridCol="repeat(auto-fill,minmax(300px ,1fr))" gap="50px 30px ">
           {Card.map(({ item, count, icon }) => (
             <Flex className="card" flexDir="column" key={item}>

@@ -43,7 +43,7 @@ const Header = () => {
                   onClick={() => handleOpenProfile(false)}
                 ></div>
 
-                <ProfileCard />
+                <ProfileCard handleOpenProfile={handleOpenProfile}/>
               </Flex>
             ) : null}
           </Flex>

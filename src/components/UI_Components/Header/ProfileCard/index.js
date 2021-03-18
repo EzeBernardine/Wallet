@@ -5,7 +5,7 @@ import { CityIcon, LocationIcon, PhoneIcon } from "../../../assest/svg";
 import { Link } from "react-router-dom";
 import Avatar from "../../../../components/assest/black.png";
 
-const ProfileCard = () => {
+const ProfileCard = ({ handleOpenProfile }) => {
   return (
     <Styles className="App">
       <Flex className="profile-card">
@@ -23,7 +23,7 @@ const ProfileCard = () => {
         </Flex>
 
         <Flex flexDir="column" className="location-details">
-          <Grid flexDir="column">
+          <Grid flexDir="column" gap='0'>
             <Flex justify="flex-start" margin="5px 0">
               <Flex width="max-content">
                 <CityIcon width="15px" height="15px" color="#673a1e" />
@@ -50,7 +50,9 @@ const ProfileCard = () => {
         <Flex className="btns">
           <Flex width="50%">
             <Link to="/dashboard/settings">
-              <button>Edit Profile</button>
+              <button onClick={() => handleOpenProfile(false)}>
+                Edit Profile
+              </button>
             </Link>
           </Flex>
           <Flex width="50%">

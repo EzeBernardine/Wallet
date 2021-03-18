@@ -10,14 +10,13 @@ import propTypes from "prop-types";
 import { TabWrapper } from "./styles";
 import Tab from "./Tab";
 
-const Tabs = ({ icon, click, children }) => {
+const Tabs = ({ click, children }) => {
   const [activeTab, setActiveTab] = useState(children[0].props.label);
 
   const onClickTabItem = (tab) => {
     click(tab);
     setActiveTab(tab);
   };
-  console.log(icon)
   return (
     <TabWrapper>
       <ol className="tab-list">
@@ -25,13 +24,12 @@ const Tabs = ({ icon, click, children }) => {
           const { label } = child.props;
           return (
             <>
-            <Tab
-              activeTab={activeTab}
-              key={label}
-              label={label}
-              icon={icon}
-              onClick={onClickTabItem}
-            />
+              <Tab
+                activeTab={activeTab}
+                key={label}
+                label={label}
+                onClick={onClickTabItem}
+              />
             </>
           );
         })}

@@ -9,12 +9,7 @@ import { useState } from "react";
 import Profile from "./Profile";
 import Notifications from "./Notifications";
 import Security from "./Security";
-// import {
-//   VerificattionIcon,
-//   ProfileIcon,
-//   NotificationIcon,
-//   SecurityIcon,
-// } from "../../../assest/svg";
+import AccountVerification from "./AccountVerification";
 
 const Settings = () => {
   const [, setTabType] = useState("Profile Update");
@@ -28,22 +23,16 @@ const Settings = () => {
           </Header5>
         </Flex>
 
-        <Tabs
-          click={(tab) => setTabType(tab)}
-          // icon={[
-          //   `${(<VerificattionIcon />)}` ,
-          //   `${(<SecurityIcon />)}` ,
-          //   `${(<ProfileIcon />)}` ,
-          //   `${(<NotificationIcon />)}` ,
-          // ]}
-        >
+        <Tabs click={(tab) => setTabType(tab)}>
           <div label="Profile">
             <Profile />
           </div>
           <div label="Security">
             <Security />
           </div>
-          <div label="Account Verification">dvs</div>
+          <div label="Account Verification">
+            <AccountVerification />
+          </div>
           <div label="Notification">
             <Notifications />
           </div>
