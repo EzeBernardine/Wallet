@@ -23,7 +23,7 @@ const ProfileCard = ({ handleOpenProfile }) => {
         </Flex>
 
         <Flex flexDir="column" className="location-details">
-          <Grid flexDir="column" gap='0'>
+          <Grid flexDir="column" gap="0">
             <Flex justify="flex-start" margin="5px 0">
               <Flex width="max-content">
                 <CityIcon width="15px" height="15px" color="#673a1e" />
@@ -48,16 +48,11 @@ const ProfileCard = ({ handleOpenProfile }) => {
         </Flex>
 
         <Flex className="btns">
-          <Flex width="50%">
+          <Flex >
             <Link to="/dashboard/settings">
               <button onClick={() => handleOpenProfile(false)}>
                 Edit Profile
               </button>
-            </Link>
-          </Flex>
-          <Flex width="50%">
-            <Link to="/">
-              <button>Buy airtime</button>
             </Link>
           </Flex>
         </Flex>

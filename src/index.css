@@ -62,14 +62,24 @@ button:hover {
   background-color: #aa6524;
 }
 input,
-textarea {
+textarea, select {
   color: #5b5551;
   padding: 15px;
   resize: none;
   font-size: 16px;
+  background: transparent;;
   border: 1px solid #e1e1e1;
   flex: 1;
   border-radius: 8px;
+}
+select::-ms-expand {
+  display: none;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
 }
 textarea {
   min-height: 100px;

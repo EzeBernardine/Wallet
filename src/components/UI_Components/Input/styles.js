@@ -5,6 +5,14 @@ export const InputStyles = styled.div`
   padding-bottom: 20px;
   display: flex;
   flex: 1;
+  > svg {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    z-index: -1;
+    bottom: 20px;
+    margin: auto;
+  }
   > input {
     flex: 1;
   }

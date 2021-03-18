@@ -99,7 +99,7 @@ export const Bold = styled.b`
   font-weight: bold;
   @media (max-width: 700px) {
     line-height: normal;
-    font-size: 0.8rem;
+    /* font-size: 0.8rem; */
   }
 `;
 

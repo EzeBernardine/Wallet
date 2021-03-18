@@ -9,6 +9,7 @@ import Deposit from "../../src/components/pages/Dashboard/deposit";
 import Withdraw from "../../src/components/pages/Dashboard/withdraw";
 import Transfer from "../../src/components/pages/Dashboard/transfer";
 import Settings from "../../src/components/pages/Dashboard/settings";
+import BuyAirtime from "../../src/components/pages/Dashboard/buyAirtime";
 import Transactions from "../../src/components/pages/Dashboard/Transactions";
 import { isLogin } from "../lib/islogin";
 
@@ -43,6 +44,7 @@ const Router = () => {
 
         {/* route the user to the dashboard if he is logged in, else, take him to the login screen*/}
         <PrivateRoute path="/dashboard/deposit" component={Deposit} />
+        <PrivateRoute path="/dashboard/buyAirtime" component={BuyAirtime} />
         <PrivateRoute path="/dashboard/withdraw" component={Withdraw} />
         <PrivateRoute path="/dashboard/transfer" component={Transfer} />
         <PrivateRoute path="/dashboard/transactions" component={Transactions} />

@@ -9,6 +9,7 @@ import {
   TransactionIcon,
   SettingsIcon,
   TransferIcon,
+  BuyingIcon
 } from "../../assest/svg";
 import { Flex } from "../Box/styles";
 import { Link } from "react-router-dom";
@@ -39,6 +40,11 @@ const Drawer = () => {
       name: "Transaction",
       href: "/dashboard/transactions",
       icon: <TransactionIcon width="20px" height="20px" />,
+    },
+    {
+      name: "Buy airtime",
+      href: "/dashboard/buyAirtime",
+      icon: <BuyingIcon width="20px" height="20px" />,
     },
     {
       name: "Settings",

@@ -1,12 +1,13 @@
 import { Styles } from "./styles";
-import { Flex } from "../../../../UI_Components/Box/styles";
+import { Flex, Frame } from "../../../../UI_Components/Box/styles";
 import { Span, Paragraph } from "../../../../UI_Components/FontSize/styles";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
+import { UploadIcon } from "../../../../assest/svg";
 
 const AccountVerification = () => {
   const validationSchema = yup.object().shape({
-    idCard: yup.string().required("Provide a name"),
+    idCard: yup.string().required("Provide a file"),
   });
 
   return (
@@ -46,11 +47,18 @@ const AccountVerification = () => {
                       value={idCard}
                       onChange={handleChange}
                     />
-                    <div>
+                    <Flex width='max-content' flexDir='column'>
+                      <Frame>
+                        <UploadIcon
+                          color="#e1d9d4"
+                          width="40px"
+                          height="40px"
+                        />
+                      </Frame>
                       <Span color="#e1d9d4">
                         {idCard ? idCard : "Choose a file"}
                       </Span>
-                    </div>
+                    </Flex>
                   </Flex>
                   <ErrorMessage
                     name="idCard"

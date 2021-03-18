@@ -59,7 +59,7 @@ export const ListStyles = styled.li`
   }
 
   @media (max-width: 700px) {
-    padding: 0 10px;
+    padding: 0;
     margin: 0;
     border-bottom: ${({ active }) => active && "2px solid #de8430"};
     > a {
