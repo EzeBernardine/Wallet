@@ -19,9 +19,12 @@ export const Styles = styled.header`
       padding: 0;
       background: transparent;
     }
+    .welcomeNote {
+      border-right: 1px solid #e1d9d4;
+      padding-right: 10px;
+    }
     .avatar {
-      border-left: 1px solid #e1d9d4;
-      padding-left: 10px;
+  
       cursor: pointer;
       position: relative;
       .image {
@@ -56,7 +59,7 @@ export const Styles = styled.header`
       }
     }
   }
-  @media (max-width: 500px) {
+  @media (max-width: 700px) {
     .welcomeNote {
       display: none;
     }

@@ -31,10 +31,8 @@ const Header = () => {
         </Header4>
 
         <Flex height="100%" width="max-content" justify="flex-end">
-          <Flex width="max-content">
-            <Header5 color="#673a1e" className="welcomeNote">
-              Welcome
-            </Header5>
+          <Flex width="max-content" className="welcomeNote">
+            <Header5 color="#673a1e">Welcome</Header5>
             <Span color="#2c2d2d">Anonymous Obinna</Span>
           </Flex>
 
