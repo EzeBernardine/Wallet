@@ -18,7 +18,7 @@ export const InputStyles = styled.div`
   }
   > div {
     position: absolute;
-    bottom: 0;
+    top: 82%;
     font-size: 14px;
     color: #de5930;
     margin: 0 auto 0 0;

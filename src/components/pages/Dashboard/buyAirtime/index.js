@@ -18,7 +18,7 @@ import MTN from "../../../assest/mtn.png";
 
 const BuyAirtime = () => {
   const validationSchema = yup.object().shape({
-    amount: yup.string().required("Provide an amount"),
+    amount: yup.number().required("Provide an amount"),
     network: yup.string().required("Select an option"),
   });
 
@@ -126,7 +126,7 @@ const BuyAirtime = () => {
                   </Flex>
                 </Grid>
 
-                <Flex>
+                <Flex margin='20px 0 0'>
                   <Paragraph color="#5b5551">
                     Your available balance is:
                     <Bold color="#673a1e"> 2000</Bold>

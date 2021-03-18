@@ -22,9 +22,7 @@ export const Styles = styled.div`
         }
         select {
           padding: 15px 30px;
-        }
-      }
-      @media (max-width: 850px) {
+          cursor: pointer;
         grid-template-columns: 1fr;
       }
     }
