@@ -1,29 +1,24 @@
 import { Styles } from "./styles";
-import { Flex, Grid } from "../../../../UI_Components/Box/styles";
+import { Flex } from "../../../../UI_Components/Box/styles";
 import { Span, Paragraph } from "../../../../UI_Components/FontSize/styles";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
-import { InputStyles } from "../../../../UI_Components/Input/styles";
 
 const AccountVerification = () => {
   const validationSchema = yup.object().shape({
-    name: yup.string().min(2).required("Provide a name"),
-    username: yup.string().min(2).required("Provide your username"),
-    city: yup.string().min(2).required("Provide your city"),
+    idCard: yup.string().required("Provide a name"),
   });
 
   return (
     <Styles className="App">
       <Formik
         initialValues={{
-          name: "",
-          username: "",
-          city: "",
+          idCard: "",
         }}
         validationSchema={validationSchema}
         onSubmit={async () => []}
       >
-        {({ handleChange, values: { username, name, city } }) => (
+        {({ handleChange, values: { idCard } }) => (
           <Form>
             <Flex margin="0 0 30px 0" justify="flex-start" warning>
               <Paragraph color="#2c2d2d" spacing=".015rem" lineHeight="22px">
@@ -32,50 +27,48 @@ const AccountVerification = () => {
               </Paragraph>
             </Flex>
 
-            <Grid className="input-container" gap="10px">
-              <Flex justify="space-between">
-                <Flex width="calc( 50% - 10px )">
-                  <Flex className="input-wrap" flexDir="column" align="stretch">
-                    <label htmlFor="name">Name</label>
-                    <InputStyles>
-                      <Field
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        id="name"
-                        value={name}
-                        onChange={handleChange}
-                      />
-                      <ErrorMessage
-                        name="name"
-                        component="div"
-                        className="error"
-                      />
-                    </InputStyles>
+            <div>
+              <Flex
+                className="input-wrap"
+                align="stretch"
+                justify="flex-start"
+                margin="50px 0"
+              >
+                <label htmlFor="idCard">Choose a file</label>
+
+                <Flex flexDir="column" margin="0 0 0 20px" width="200px">
+                  <Flex className="upload" width="200px" height="150px">
+                    <Field
+                      type="file"
+                      name="idCard"
+                      placeholder="Choose a file"
+                      id="idCard"
+                      value={idCard}
+                      onChange={handleChange}
+                    />
+                    <div>
+                      <Span color="#e1d9d4">
+                        {idCard ? idCard : "Choose a file"}
+                      </Span>
+                    </div>
                   </Flex>
+                  <ErrorMessage
+                    name="idCard"
+                    component="div"
+                    className="error"
+                  />
                 </Flex>
-              
               </Flex>
 
               {/* ------------------button section-------------- */}
-              <Flex className="btn" justify="flex-end" margin="23px 0 0 0">
+              <Flex justify="flex-start" margin="50px auto 0 0">
                 <button type="submit" padding="15px 30px" onClick={() => []}>
-                  <Flex>
-                    <Span
-                      lineHeight="15px"
-                      color={"#fff"}
-                      className="drawerText"
-                    >
-                      Save
-                    </Span>
-
-                    <Span lineHeight="15px" color={"#fff"}>
-                      {/* <TransferIcon width="20px" height="20px" /> */}
-                    </Span>
-                  </Flex>
+                  <Span lineHeight="15px" color={"#fff"} className="drawerText">
+                    Save
+                  </Span>
                 </button>
               </Flex>
-            </Grid>
+            </div>
           </Form>
         )}
       </Formik>
