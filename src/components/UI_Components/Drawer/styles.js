@@ -17,7 +17,7 @@ export const Styles = styled.aside`
     position: fixed;
     width: 100%;
     padding: 20px 5% 0;
-    z-index: 100;
+    z-index: 99;
     right: 0;
     left: 0;
     bottom: unset;

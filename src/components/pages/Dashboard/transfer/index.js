@@ -10,7 +10,7 @@ import {
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import { TransferIcon } from "../../../assest/svg";
-import Recepient from "../../../assest/black-beautiful-ladies-smiling 1.png";
+import Recepient from "../../../assest/black.png";
 import Alert from "../../../UI_Components/Alert";
 import Layout from "../../../UI_Components/Layout";
 
