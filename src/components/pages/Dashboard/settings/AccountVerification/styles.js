@@ -29,4 +29,15 @@ export const Styles = styled.div`
       margin: 10px auto 0 0;
     }
   }
+  .btn {
+    button {
+      background: #2bac20;
+      :hover {
+        background: #1e8216;
+      }
+      @media (max-width: 500px) {
+        width: 100%;
+      }
+    }
+  }
 `;

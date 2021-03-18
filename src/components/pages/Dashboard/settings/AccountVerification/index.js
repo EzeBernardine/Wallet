@@ -61,10 +61,10 @@ const AccountVerification = () => {
               </Flex>
 
               {/* ------------------button section-------------- */}
-              <Flex justify="flex-start" margin="50px auto 0 0">
+              <Flex justify="flex-start" margin="50px auto 0 0" className="btn">
                 <button type="submit" padding="15px 30px" onClick={() => []}>
                   <Span lineHeight="15px" color={"#fff"} className="drawerText">
-                    Save
+                    Upload
                   </Span>
                 </button>
               </Flex>
