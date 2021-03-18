@@ -1,17 +1,8 @@
 import { Styles } from "./styles";
 import { Flex, Frame, Grid } from "../../../UI_Components/Box/styles";
-import {
-  Header5,
-  Span,
-  Header4,
-  Header3,
-} from "../../../UI_Components/FontSize/styles";
-import {
-  LogoutIcon,
-  CityIcon,
-  LocationIcon,
-  PhoneIcon,
-} from "../../../assest/svg";
+import { Header5, Span } from "../../../UI_Components/FontSize/styles";
+import { CityIcon, LocationIcon, PhoneIcon } from "../../../assest/svg";
+import { Link } from "react-router-dom";
 import Avatar from "../../../../components/assest/black.png";
 
 const ProfileCard = () => {
@@ -58,10 +49,14 @@ const ProfileCard = () => {
 
         <Flex className="btns">
           <Flex width="50%">
-            <button>Edit Profile</button>
+            <Link to="/dashboard/settings">
+              <button>Edit Profile</button>
+            </Link>
           </Flex>
           <Flex width="50%">
-            <button>Buy airtime</button>
+            <Link to="/">
+              <button>Buy airtime</button>
+            </Link>
           </Flex>
         </Flex>
       </Flex>

@@ -4,7 +4,7 @@ export const Styles = styled.div`
   @keyframes drop {
     0% {
       transform: translateY(-100%);
-      padding:  0 0;
+      padding: 0 0;
     }
     100% {
       padding: 20px 0 0;
@@ -13,7 +13,7 @@ export const Styles = styled.div`
   }
   overflow: hidden;
   > .profile-card {
-    animation: drop 300ms linear forwards ;
+    animation: drop 300ms linear forwards;
     position: relative;
     z-index: 10000;
     background: white;
@@ -41,7 +41,8 @@ export const Styles = styled.div`
     > .btns {
       border-top: 1px solid #673a1e2b;
       background: #de8430;
-      > div > button {
+      > div a,
+      > div > a > button {
         width: 100%;
         color: #673a1e;
         font-size: 14px;

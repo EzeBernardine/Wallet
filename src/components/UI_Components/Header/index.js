@@ -1,17 +1,7 @@
 import { Styles } from "./styles";
-import { Flex, Frame, Grid } from "../../UI_Components/Box/styles";
-import {
-  Header5,
-  Span,
-  Header4,
-  Header3,
-} from "../../UI_Components/FontSize/styles";
-import {
-  LogoutIcon,
-  CityIcon,
-  LocationIcon,
-  PhoneIcon,
-} from "../../assest/svg";
+import { Flex, Frame } from "../../UI_Components/Box/styles";
+import { Header5, Span, Header4 } from "../../UI_Components/FontSize/styles";
+import { LogoutIcon } from "../../assest/svg";
 import Avatar from "../../../components/assest/black.png";
 import { useState } from "react";
 import ProfileCard from "./ProfileCard";
@@ -50,7 +40,7 @@ const Header = () => {
               <Flex className="modal">
                 <div
                   className="overlay"
-                  onClick={() => setOpendProfile(false)}
+                  onClick={() => handleOpenProfile(false)}
                 ></div>
 
                 <ProfileCard />
