@@ -26,8 +26,7 @@ const Profile = () => {
       Authorization: `${token.replace(/['"]+/g, "")}`,
     },
   })
-    .then(({ data }) => 
-    {
+    .then(({ data }) => {
       // console.log(data)
       setCurrentUser(data.data.username);
     })
