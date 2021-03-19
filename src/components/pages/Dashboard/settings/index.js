@@ -24,7 +24,7 @@ const Settings = () => {
           </Header5>
         </Flex>
 
-        <Tabs click={(tab) => setTabType(tab)} key={generateID(15)}>
+        <Tabs click={(tab) => setTabType(tab)}>
           <div label="Profile">
             <Profile key={generateID(15)} />
           </div>

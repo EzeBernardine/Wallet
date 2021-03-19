@@ -42,4 +42,7 @@ export const Styles = styled.div`
       }
     }
   }
+  .oldPassword button{
+    background: #de8430
+  }
 `;

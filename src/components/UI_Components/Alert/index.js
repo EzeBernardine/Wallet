@@ -5,14 +5,11 @@ import { useEffect, useState } from "react";
 const Alert = ({ type, duration = 3000, reCall, children }) => {
   const [visible, setVisible] = useState(true);
 
-  const TimeOut = () =>
-    setTimeout(() => {
+  useEffect(() => {
+    let timeout = setTimeout(() => {
       setVisible(false);
     }, duration);
-
-  useEffect(() => {
-    TimeOut();
-    return () => clearTimeout(TimeOut());
+    return () => clearTimeout(timeout);
   });
   return (
     <>

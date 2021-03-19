@@ -1,5 +1,4 @@
 import { useState } from "react";
-import API from "./api";
 
 // custome hook that saves items in localstorage
 const useLocalStorageHook = (initialValue = "storedItem") => {

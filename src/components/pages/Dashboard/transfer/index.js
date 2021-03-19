@@ -50,7 +50,7 @@ const Transfer = () => {
                   </Paragraph>
                 </Flex>
 
-                < >
+                <>
                   {true ? (
                     <Alert type="success">
                       <Flex justify="flex-start" className="recipient">

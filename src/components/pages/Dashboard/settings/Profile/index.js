@@ -7,7 +7,7 @@ import { InputStyles } from "../../../../UI_Components/Input/styles";
 import API from "../../../../../lib/api";
 import Alert from "../../../../UI_Components/Alert";
 import useLocalStorageHook from "../../../../../lib/customHook";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Profile = () => {
   const validationSchema = yup.object().shape({
@@ -21,17 +21,19 @@ const Profile = () => {
   const [currentUser, setCurrentUser] = useState("");
   const [status, setStatus] = useState(false);
 
-  API.get("user/getuser", {
-    headers: {
-      Authorization: `${token.replace(/['"]+/g, "")}`,
-    },
-  })
-    .then(({ data }) => {
-      // console.log(data)
-      setCurrentUser(data.data.username);
+  const getCurrentUserData = () => {
+    API.get("user/getuser", {
+      headers: {
+        Authorization: `${token.replace(/['"]+/g, "")}`,
+      },
     })
-    .catch((err) => console.log(err));
+      .then(({ data }) => setCurrentUser(data.data.username))
+      .catch((err) => console.log(err));
+  };
 
+  useEffect(() => {
+    getCurrentUserData();
+  }, []);
   return (
     <Styles className="App">
       <Formik
