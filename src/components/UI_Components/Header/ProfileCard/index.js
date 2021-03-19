@@ -4,40 +4,8 @@ import { Header5, Span } from "../../../UI_Components/FontSize/styles";
 import { CityIcon, LocationIcon, PhoneIcon } from "../../../assest/svg";
 import { Link } from "react-router-dom";
 import Avatar from "../../../../components/assest/black.png";
-import API from "../../../../lib/api";
-import useLocalStorageHook from "../../../../lib/customHook";
-import { useState, useEffect } from "react";
 
-const ProfileCard = ({ handleOpenProfile }) => {
-  const { state: token } = useLocalStorageHook("token");
-  const [userProfile, setUserprofile] = useState({
-    Address: "",
-    city: "",
-    name: "",
-    phone: "",
-    username: "",
-  });
-
-  const getCurrentUserProfile = async () => {
-    await API.get("user/myprofile", {
-      headers: { Authorization: `${token.replace(/['"]+/g, "")}` },
-    })
-      .then(({ data }) => {
-        setUserprofile({
-          Address: data.data.Address,
-          city: data.data.city,
-          name: data.data.name,
-          phone: data.data.phone,
-          username: data.data.username,
-        });
-      })
-      .catch((err) => console.log(err));
-  };
-
-  useEffect(() => {
-    getCurrentUserProfile();
-  }, []);
-
+const ProfileCard = ({ handleOpenProfile, userProfile }) => {
   return (
     <Styles className="App">
       <Flex className="profile-card">
@@ -48,12 +16,12 @@ const ProfileCard = ({ handleOpenProfile }) => {
         </Flex>
 
         <Flex margin="0" flexDir="column" className="name-section">
-          {userProfile.name?.length > 0 ? (
+          {userProfile?.name?.length > 0 ? (
             <Header5 color="#673a1e" bold>
               {userProfile.name}
             </Header5>
           ) : null}
-          {userProfile.username?.length > 0 ? (
+          {userProfile?.username?.length > 0 ? (
             <Header5 color="#dda278"> {userProfile.username}</Header5>
           ) : null}
         </Flex>
