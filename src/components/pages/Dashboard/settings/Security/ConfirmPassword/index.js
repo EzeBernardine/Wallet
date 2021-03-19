@@ -1,6 +1,10 @@
 import { Styles } from "./styles";
 import { Flex, Grid } from "../../../../../UI_Components/Box/styles";
-import { Span, Paragraph } from "../../../../../UI_Components/FontSize/styles";
+import {
+  Span,
+  Bold,
+  Header4,
+} from "../../../../../UI_Components/FontSize/styles";
 import { InputStyles } from "../../../../../UI_Components/Input/styles";
 import API from "../../../../../../lib/api";
 import useLocalStorageHook from "../../../../../../lib/customHook";
@@ -21,9 +25,9 @@ const ConfirmPassword = ({
     <Styles className="App">
       <form>
         <Flex margin="0 0 30px 0" justify="flex-start" warning>
-          <Paragraph color="#2c2d2d" spacing=".015rem" lineHeight="22px">
+          <Header4 color="#2c2d2d" spacing=".015rem" lineHeight="22px">
             Create a new strong password
-          </Paragraph>
+          </Header4>
         </Flex>
 
         <Grid className="input-container" gap="18px">
@@ -63,9 +67,14 @@ const ConfirmPassword = ({
             </Flex>
           </Flex>
 
-          {!allValid ? (
-            <Flex>
+          {(!allValid && createPassword.length > 0)? (
+            <Flex flexDir="column" align="flex-start">
               {/* create an Validation for each password  with props of label and boolean of state */}
+              <Flex flexDir="column" align="flex-start" margin='10px 0'>
+                <Bold color={"#de8430"} size="14px">
+                  Pass must match the following confditions
+                </Bold>
+              </Flex>
               <ul className="validation-container">
                 {/* <Validation /> */}
                 {validationChecks.map((data) => (

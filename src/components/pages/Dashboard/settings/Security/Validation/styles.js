@@ -9,7 +9,7 @@ export const Styles = styled.div`
   > li {
     position: relative;
     > span {
-        padding-left: 15px;
+      padding-left: 15px;
     }
     ::before {
       position: absolute;
@@ -18,11 +18,13 @@ export const Styles = styled.div`
       top: 0;
       bottom: 0;
       margin: auto;
-      height: 7px;
-      width: 7px;
+      height: 10px;
+      width: 10px;
       border-radius: 50%;
       transition: 300ms;
-      background: ${({ matched }) => (matched ? " #de8430" : "#2c2d2d")};
+      border: ${({ matched }) =>
+        "1px solid  " + (matched ? " #de8430" : "#918e8c")};
+      background: ${({ matched }) => (matched ? " #de8430" : "transaprent")};
     }
   }
 `;

@@ -12,6 +12,7 @@ import ComfirmPassword from "./ConfirmPassword";
 const Profile = () => {
   const [oldPassword, setOldPassword] = useState(true);
   const { state: token } = useLocalStorageHook("token");
+  
   // form inputs
   const [createPassword, setCreatePassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -47,6 +48,7 @@ const Profile = () => {
     ["Passwords match", passwordMatch],
   ];
 
+  // handles all validation states
   const validatePassword = () => {
     // has uppercase letter
     if (createPassword.toLowerCase() != createPassword)
