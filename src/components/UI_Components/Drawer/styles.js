@@ -52,9 +52,14 @@ export const ListStyles = styled.li`
     background-color: transparent;
     > div span {
       margin-right: 15px;
-      :hover {
-        color: ${({ active }) => (active ? "#de8430" : "#353332")};
-      }
+    }
+  }
+  :hover > a > div > span {
+    :first-child {
+      color: ${({ active }) => (active ? "#de8430" : "#918e8c")};
+    }
+    :last-child {
+      font-weight: 500;
     }
   }
 

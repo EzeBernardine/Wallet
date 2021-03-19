@@ -67,13 +67,13 @@ const Drawer = () => {
                 <Flex justify="flex-start">
                   <Span
                     lineHeight="15px"
-                    color={path === href ? " #de8430" : "#918e8c"}
+                    color={path === href ? " #de8430" : '#b7b2b0'}
                   >
                     {icon}
                   </Span>
                   <Span
                     lineHeight="15px"
-                    color={path === href ? " #de8430" : "#5b5551"}
+                    color={path === href ? " #de8430" : "#2c2d2d"}
                     className="drawerText"
                   >
                     {name}
