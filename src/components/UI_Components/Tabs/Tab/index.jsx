@@ -10,7 +10,7 @@ const Tab = ({ activeTab, label, onClick }) => {
 
   return (
     <>
-      <li className={className} onClick={onClickTab}>
+      <li className={className} onClick={onClickTab} >
         {label}
       </li>
     </>

@@ -6,7 +6,7 @@ import Switch from "../../../../UI_Components/Switch";
 const Notifications = () => {
   return (
     <Styles className="App">
-      <Flex margin="50px 0 " flexDir="column" align="flex-start">
+      <Flex  flexDir="column" align="flex-start">
         <Flex margin="10px 0 0" maxWidth="600px">
           <Span color="#5b5551">
             Get email notifications for all your transactons?

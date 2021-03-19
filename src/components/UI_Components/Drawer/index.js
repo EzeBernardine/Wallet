@@ -20,37 +20,37 @@ const Drawer = () => {
     {
       name: "Overview",
       href: "/dashboard",
-      icon: <DashboardIcon width="20px" height="20px" />,
+      icon: <DashboardIcon width="16px" height="16px" />,
     },
     {
       name: "Deposit",
       href: "/dashboard/deposit",
-      icon: <DepositIcon width="20px" height="20px" />,
+      icon: <DepositIcon width="16px" height="16px" />,
     },
     {
       name: "Withdraw",
       href: "/dashboard/withdraw",
-      icon: <WithdrawalIcon width="20px" height="20px" />,
+      icon: <WithdrawalIcon width="16px" height="16px" />,
     },
     {
       name: "Transfer",
       href: "/dashboard/transfer",
-      icon: <TransferIcon width="20px" height="20px" />,
+      icon: <TransferIcon width="16px" height="16px" />,
     },
     {
       name: "Transaction",
       href: "/dashboard/transactions",
-      icon: <TransactionIcon width="20px" height="20px" />,
+      icon: <TransactionIcon width="16px" height="16px" />,
     },
     {
       name: "Buy airtime",
       href: "/dashboard/buyAirtime",
-      icon: <BuyingIcon width="20px" height="20px" />,
+      icon: <BuyingIcon width="16px" height="16px" />,
     },
     {
       name: "Settings",
       href: "/dashboard/settings",
-      icon: <SettingsIcon width="20px" height="20px" />,
+      icon: <SettingsIcon width="16px" height="16px" />,
     },
   ];
 
@@ -67,11 +67,13 @@ const Drawer = () => {
                 <Flex justify="flex-start">
                   <Span
                     lineHeight="15px"
-                    color={path === href ? " #de8430" : '#b7b2b0'}
+                    color={path === href ? " #de8430" : "#918e8c"}
+                    // color={path === href ? " #de8430" : "#b7b2b0"}
                   >
                     {icon}
                   </Span>
                   <Span
+                    size="14px"
                     lineHeight="15px"
                     color={path === href ? " #de8430" : "#2c2d2d"}
                     className="drawerText"

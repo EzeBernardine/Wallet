@@ -53,10 +53,10 @@ export const Header4 = styled.h4`
   font-weight: ${({ bold, weight }) =>
     weight ? weight : bold ? "bold" : "500"};
   line-height: ${({ lineHeight }) => (lineHeight ? lineHeight : " normal")};
-  font-size: ${({ size }) => (size ? size : " 24px")};
+  font-size: ${({ size }) => (size ? size : " 20px")};
   @media (max-width: 700px) {
     line-height: ${({ lineHeight }) => (lineHeight ? lineHeight : " normal")};
-    font-size: ${({ size }) => (size ? size : " 24px")};
+    font-size: ${({ size }) => (size ? size : " 20px")};
   }
 `;
 
@@ -81,7 +81,7 @@ export const Paragraph = styled.p`
   text-align: ${({ align, center }) => (center ? "center" : align && align)};
   color: ${({ color }) => (color ? color : "blue")};
   line-height: ${({ lineHeight }) => (lineHeight ? lineHeight : " 34px")};
-  font-size: ${({ size }) => (size ? size : " 0.95rem")};
+  font-size: ${({ size }) => (size ? size : " 14px")};
   font-weight: ${({ bold, weight }) =>
     weight ? weight : bold ? "bold" : "normal"};
   @media (max-width: 700px) {
@@ -109,7 +109,7 @@ export const Span = styled.span`
   text-align: ${({ align, center }) => (center ? "center" : align && align)};
   color: ${({ color }) => (color ? color : "blue")};
   line-height: ${({ lineHeight }) => (lineHeight ? lineHeight : " 28px")};
-  font-size: ${({ size }) => (size ? size : " 16px")};
+  font-size: ${({ size }) => (size ? size : " 14px")};
   font-weight: ${({ bold, weight }) =>
     weight ? weight : bold ? "bold" : "350"};
   @media (max-width: 700px) {

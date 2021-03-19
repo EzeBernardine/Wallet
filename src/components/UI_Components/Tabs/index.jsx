@@ -27,7 +27,7 @@ const Tabs = ({ click, children }) => {
             <>
               <Tab
                 activeTab={activeTab}
-                key={generateID(11)}
+                key={generateID(15)}
                 label={label}
                 onClick={onClickTabItem}
               />
