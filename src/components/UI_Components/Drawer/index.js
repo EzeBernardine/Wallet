@@ -9,10 +9,11 @@ import {
   TransactionIcon,
   SettingsIcon,
   TransferIcon,
-  BuyingIcon
+  BuyingIcon,
 } from "../../assest/svg";
 import { Flex } from "../Box/styles";
 import { Link } from "react-router-dom";
+import { generateID } from "../../../lib/generateID";
 
 const Drawer = () => {
   const DrawerItem = [
@@ -61,7 +62,7 @@ const Drawer = () => {
         <Header5 color="#673a1e">My Dashbaord</Header5>
         <ul>
           {DrawerItem.map(({ name, icon, href }) => (
-            <ListStyles active={path === href} key={name}>
+            <ListStyles active={path === href} key={generateID(13)}>
               <Link to={href}>
                 <Flex justify="flex-start">
                   <Span

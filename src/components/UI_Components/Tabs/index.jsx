@@ -9,6 +9,7 @@ import React, { useState } from "react";
 import propTypes from "prop-types";
 import { TabWrapper } from "./styles";
 import Tab from "./Tab";
+import { generateID } from "../../../lib/generateID";
 
 const Tabs = ({ click, children }) => {
   const [activeTab, setActiveTab] = useState(children[0].props.label);
@@ -20,13 +21,13 @@ const Tabs = ({ click, children }) => {
   return (
     <TabWrapper>
       <ol className="tab-list">
-        {children.map((child, index) => {
+        {children.map((child) => {
           const { label } = child.props;
           return (
             <>
               <Tab
                 activeTab={activeTab}
-                key={label}
+                key={generateID(11)}
                 label={label}
                 onClick={onClickTabItem}
               />

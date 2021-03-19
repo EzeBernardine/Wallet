@@ -4,13 +4,34 @@ import { Span, Paragraph } from "../../../../UI_Components/FontSize/styles";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import { InputStyles } from "../../../../UI_Components/Input/styles";
+import API from "../../../../../lib/api";
+import Alert from "../../../../UI_Components/Alert";
+import useLocalStorageHook from "../../../../../lib/customHook";
+import { useState } from "react";
 
 const Profile = () => {
   const validationSchema = yup.object().shape({
-    name: yup.string().min(2).required("Provide a name"),
-    username: yup.string().min(2).required("Provide your username"),
-    city: yup.string().min(2).required("Provide your city"),
+    name: yup.string().min(2),
+    username: yup.string().min(2),
+    city: yup.string().min(2),
+    phone: yup.number().min(10),
+    Address: yup.string().min(10),
   });
+  const { state: token } = useLocalStorageHook("token");
+  const [currentUser, setCurrentUser] = useState("");
+  const [status, setStatus] = useState(false);
+
+  API.get("user/getuser", {
+    headers: {
+      Authorization: `${token.replace(/['"]+/g, "")}`,
+    },
+  })
+    .then(({ data }) => 
+    {
+      // console.log(data)
+      setCurrentUser(data.data.username);
+    })
+    .catch((err) => console.log(err));
 
   return (
     <Styles className="App">
@@ -19,11 +40,33 @@ const Profile = () => {
           name: "",
           username: "",
           city: "",
+          phone: "",
+          Address: "",
         }}
         validationSchema={validationSchema}
-        onSubmit={async () => []}
+        onSubmit={async (
+          { username, name, city, Address, phone },
+          { resetForm }
+        ) => {
+          await API.post(
+            "user/createProfile",
+            { name, city, Address, phone },
+            {
+              headers: { Authorization: `${token.replace(/['"]+/g, "")}` },
+            }
+          )
+            .then(({ data }) => {
+              setStatus("");
+              setStatus(data.message);
+              resetForm();
+            })
+            .catch((err) => console.log(err));
+        }}
       >
-        {({ handleChange, values: { username, name, city } }) => (
+        {({
+          handleChange,
+          values: { username, name, city, Address, phone },
+        }) => (
           <Form>
             <Flex margin="0 0 30px 0" justify="flex-start" warning>
               <Paragraph color="#2c2d2d" spacing=".015rem" lineHeight="22px">
@@ -32,6 +75,12 @@ const Profile = () => {
                 good to go.
               </Paragraph>
             </Flex>
+
+            {status ? (
+              <Alert type="success" duration="5000">
+                <Paragraph> {status}</Paragraph>
+              </Alert>
+            ) : null}
 
             <Grid className="input-container" gap="10px">
               <Flex justify="space-between">
@@ -57,14 +106,15 @@ const Profile = () => {
                 </Flex>
                 <Flex width="calc( 50% - 10px )">
                   <Flex className="input-wrap" flexDir="column" align="stretch">
-                    <label htmlFor="username">Username</label>
+                    <label htmlFor="name">Username</label>
                     <InputStyles>
                       <Field
                         type="text"
                         name="username"
-                        placeholder="Username"
+                        placeholder={currentUser}
                         id="username"
                         value={username}
+                        onChange={handleChange}
                       />
                       <ErrorMessage
                         name="username"
@@ -95,15 +145,17 @@ const Profile = () => {
                 </Flex>
                 <Flex width="calc( 50% - 10px )">
                   <Flex className="input-wrap" flexDir="column" align="stretch">
-                    <label htmlFor="cardnumber">Phone number</label>
+                    <label htmlFor="phone">Phone number</label>
                     <InputStyles>
                       <Field
                         type="text"
-                        name="amount"
-                        placeholder="Username"
-                        id="cardnumber"
+                        name="phone"
+                        placeholder="Phone Number"
+                        id="phone"
+                        value={phone}
+                        onChange={handleChange}
                       />
-                      <ErrorMessage name="amount" component="div" />
+                      <ErrorMessage name="phone" component="div" />
                     </InputStyles>
                   </Flex>
                 </Flex>
@@ -111,16 +163,18 @@ const Profile = () => {
 
               <div>
                 <Flex className="input-wrap" justify="space-between">
-                  <label htmlFor="comment">Address</label>
+                  <label htmlFor="Address">Address</label>
                   <InputStyles>
                     <Field
                       type="text"
-                      name="comment"
-                      id="comment"
+                      name="Address"
+                      id="Address"
                       component="textarea"
-                      placeholder="Account Number"
+                      placeholder="Address"
+                      value={Address}
+                      onChange={handleChange}
                     />
-                    <ErrorMessage name="comment" component="div" />
+                    <ErrorMessage name="Address" component="div" />
                   </InputStyles>
                 </Flex>
               </div>
@@ -135,10 +189,6 @@ const Profile = () => {
                       className="drawerText"
                     >
                       Save
-                    </Span>
-
-                    <Span lineHeight="15px" color={"#fff"}>
-                      {/* <TransferIcon width="20px" height="20px" /> */}
                     </Span>
                   </Flex>
                 </button>

@@ -5,11 +5,14 @@ import { LogoutIcon } from "../../assest/svg";
 import Avatar from "../../../components/assest/black.png";
 import { useState } from "react";
 import ProfileCard from "./ProfileCard";
+import { useHistory } from "react-router-dom";
 
 const Header = () => {
   const [openProfile, setOpendProfile] = useState(false);
+  let history = useHistory();
   const handleLogout = () => {
     localStorage.removeItem("token");
+    history.push("/login");
   };
 
   const handleOpenProfile = (bolean) => setOpendProfile(bolean);
@@ -43,7 +46,7 @@ const Header = () => {
                   onClick={() => handleOpenProfile(false)}
                 ></div>
 
-                <ProfileCard handleOpenProfile={handleOpenProfile}/>
+                <ProfileCard handleOpenProfile={handleOpenProfile} />
               </Flex>
             ) : null}
           </Flex>

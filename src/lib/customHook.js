@@ -1,4 +1,5 @@
 import { useState } from "react";
+import API from "./api";
 
 // custome hook that saves items in localstorage
 const useLocalStorageHook = (initialValue = "storedItem") => {
@@ -12,7 +13,11 @@ const useLocalStorageHook = (initialValue = "storedItem") => {
 
   // set setState to a new item passed in as props
   const setStorage = (item = null) => {
-    let newItem = localStorage.setItem(initialValue, JSON.stringify(item));
+    let strippedStr = item;
+    let newItem = localStorage.setItem(
+      initialValue,
+      JSON.stringify(strippedStr)
+    );
     return setState(newItem);
   };
 

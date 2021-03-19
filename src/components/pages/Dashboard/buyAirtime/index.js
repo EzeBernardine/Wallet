@@ -106,12 +106,8 @@ const BuyAirtime = () => {
                         id="cardnumber"
                         value={network}
                       >
-                        <option value="" selected>
-                          Select
-                        </option>
-                        <option value="MTN" selected>
-                          MTN
-                        </option>
+                        <option defaultValue="">Select</option>
+                        <option value="MTN">MTN</option>
                         <option value="Airtel">Airtel</option>
                         <option value="GLO">GLO</option>
                         <option value="9mobile">9mobile</option>
@@ -126,7 +122,7 @@ const BuyAirtime = () => {
                   </Flex>
                 </Grid>
 
-                <Flex margin='20px 0 0'>
+                <Flex margin="20px 0 0">
                   <Paragraph color="#5b5551">
                     Your available balance is:
                     <Bold color="#673a1e"> 2000</Bold>

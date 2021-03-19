@@ -87,3 +87,35 @@ exports.loginUser = async (req, res, next) => {
   }
 };
 
+exports.changePassword = async (req, res, next) => {
+  const user = await User.findOne({ _id: req._id });
+  if (!user) {
+    return res.status(404).json({ success: false, message: "User not found" });
+  }
+  const checkPassword = await User.comparePassword(
+    req.body.oldPassword,
+    user.password
+  );
+  if (!checkPassword) {
+    return res
+      .status(400)
+      .json({ success: false, message: "Old password is incorrect" });
+  }
+  user.password = req.body.newPassword;
+  await user.save();
+  return res
+    .status(200)
+    .json({ success: true, message: "Password changed successfully" });
+};
+
+exports.getCurrentUser = async (req, res) => {
+  try {
+    const user = await User.findOne({ _id: req._id });
+    return res.status(200).json({
+      success: true,
+      data: user,
+    });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
