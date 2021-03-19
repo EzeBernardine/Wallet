@@ -75,7 +75,7 @@ const Overview = () => {
           </Flex>
         </Flex>
 
-        <Flex margin="0 0 50px 0" justify="flex-start">
+        <Flex margin="0 0 30px 0" justify="flex-start">
           <Header4 color="#2c2d2d">Overview of your transactions</Header4>
         </Flex>
 

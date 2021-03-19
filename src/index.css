@@ -32,7 +32,10 @@ h6 {
   padding: 0;
   /* font-weight: 700; */
 }
-li, a, span, p {
+li,
+a,
+span,
+p {
   font-style: 400;
 }
 a {
@@ -48,7 +51,8 @@ input {
   border: none;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   border: 1px solid #de8430 !important;
   outline: none;
 }
@@ -65,12 +69,13 @@ button:hover {
   background-color: #aa6524;
 }
 input,
-textarea, select {
+textarea,
+select {
   color: #5b5551;
   padding: 15px;
   resize: none;
-  font-size: 16px;
-  background: transparent;;
+  font-size: 14px;
+  background: transparent;
   border: 1px solid #e1e1e1;
   flex: 1;
   border-radius: 8px;
@@ -82,13 +87,15 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   text-indent: 1px;
-  text-overflow: '';
+  text-overflow: "";
 }
 textarea {
   min-height: 100px;
 }
-label, legend {
-  color: #5b5551
+label,
+legend {
+  color: #5b5551;
+  font-size: 14px;
 }
 
 *::-webkit-scrollbar {

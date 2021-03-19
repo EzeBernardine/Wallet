@@ -52,6 +52,7 @@ export const ListStyles = styled.li`
     background-color: transparent;
     > div span {
       margin-right: 15px;
+      font-weight: ${({ active }) => (active ? "500" : "normal")};
     }
   }
   :hover > a > div > span {
