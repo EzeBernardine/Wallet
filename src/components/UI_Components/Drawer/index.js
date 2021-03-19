@@ -67,7 +67,8 @@ const Drawer = () => {
                 <Flex justify="flex-start">
                   <Span
                     lineHeight="15px"
-                    color={path === href ? " #de8430" : "#b7b2b0"}
+                    color={path === href ? " #de8430" : "#918e8c"}
+                    // color={path === href ? " #de8430" : "#b7b2b0"}
                   >
                     {icon}
                   </Span>

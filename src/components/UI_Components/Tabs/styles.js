@@ -20,10 +20,9 @@ export const TabWrapper = styled("div")`
     list-style: none;
     padding: 0.8rem 0.55rem;
     flex: 1;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     letter-spacing: 0.05rem;
-    font-size: 20px;
     height: 100%;
     white-space: nowrap;
     display: flex;
