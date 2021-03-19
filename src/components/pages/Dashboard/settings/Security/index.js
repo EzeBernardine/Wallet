@@ -10,8 +10,86 @@ import { useState, useEffect } from "react";
 import ComfirmPassword from "./ConfirmPassword";
 
 const Profile = () => {
-  const [oldPassword, setOldPassword] = useState("lk");
+  const [oldPassword, setOldPassword] = useState(true);
   const { state: token } = useLocalStorageHook("token");
+  // form inputs
+  const [createPassword, setCreatePassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  //manage all vallidations state
+  const [validation, setValidation] = useState({
+    containsUL: false,
+    containsLL: false,
+    containsN: false,
+    containsSC: false,
+    contains8C: false,
+    passwordMatch: false,
+    allValid: false,
+  });
+
+  const {
+    containsUL,
+    containsLL,
+    containsN,
+    containsSC,
+    contains8C,
+    passwordMatch,
+    allValid,
+  } = validation;
+
+  // labels and state boolean corresponding to each validation
+  const validationChecks = [
+    ["An uppercase letter (A-Z)", containsUL],
+    ["A lowercase letter (a-z)", containsLL],
+    ["A number (0-9)", containsN],
+    ["A special character (!@#$)", containsSC],
+    ["At least 8 characters", contains8C],
+    ["Passwords match", passwordMatch],
+  ];
+
+  const validatePassword = () => {
+    // has uppercase letter
+    if (createPassword.toLowerCase() != createPassword)
+      setValidation((prev) => ({ ...prev, containsUL: true }));
+    else setValidation((prev) => ({ ...prev, containsUL: false }));
+
+    // has lowercase letter
+    if (createPassword.toUpperCase() != createPassword)
+      setValidation((prev) => ({ ...prev, containsLL: true }));
+    else setValidation((prev) => ({ ...prev, containsLL: false }));
+
+    // has number
+    if (/\d/.test(createPassword))
+      setValidation((prev) => ({ ...prev, containsN: true }));
+    else setValidation((prev) => ({ ...prev, containsN: false }));
+
+    // has special character
+    if (/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(createPassword))
+      setValidation((prev) => ({ ...prev, containsSC: true }));
+    else setValidation((prev) => ({ ...prev, containsSC: false }));
+
+    // has 8 characters
+    if (createPassword.length >= 8)
+      setValidation((prev) => ({ ...prev, contains8C: true }));
+    else setValidation((prev) => ({ ...prev, contains8C: false }));
+
+    // passwords match
+    if (createPassword !== "" && createPassword === confirmPassword)
+      setValidation((prev) => ({ ...prev, passwordMatch: true }));
+    else setValidation((prev) => ({ ...prev, passwordMatch: false }));
+
+    // all validations passed
+    if (
+      containsUL &&
+      containsLL &&
+      containsN &&
+      containsSC &&
+      contains8C &&
+      passwordMatch
+    )
+      setValidation((prev) => ({ ...prev, allValid: true }));
+    else setValidation((prev) => ({ ...prev, allValid: false }));
+  };
 
   const validationSchema_oldPassword = yup.object().shape({
     oldpassword: yup.string().min(8).required("Incorrect password"),
@@ -35,7 +113,7 @@ const Profile = () => {
 
   return (
     <Styles className="App">
-      {oldPassword.length <= 0 ? (
+      {!oldPassword ? (
         <Formik
           initialValues={{
             oldpassword: "",
@@ -78,31 +156,23 @@ const Profile = () => {
                     </Flex>
                   </Flex>
                 </Flex>
-                {/* ------------------button section-------------- */}
-                <Flex
-                  className="btn oldPassword"
-                  justify="flex-end"
-                  margin="23px 0 0 0"
-                >
-                  <button type="submit" padding="15px 30px" onClick={() => []}>
-                    <Flex>
-                      <Span
-                        lineHeight="15px"
-                        color={"#fff"}
-                        className="drawerText"
-                      >
-                        Submit
-                      </Span>
-                    </Flex>
-                  </button>
-                </Flex>
               </Grid>
             </Form>
           )}
         </Formik>
-      ) : (
-        <ComfirmPassword />
-      )}
+      ) : null}
+
+      {oldPassword ? (
+        <ComfirmPassword
+          validatePassword={validatePassword}
+          confirmPassword={confirmPassword}
+          setConfirmPassword={setConfirmPassword}
+          setCreatePassword={setCreatePassword}
+          createPassword={createPassword}
+          validationChecks={validationChecks}
+          allValid={allValid}
+        />
+      ) : null}
     </Styles>
   );
 };
