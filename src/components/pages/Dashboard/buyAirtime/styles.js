@@ -23,6 +23,10 @@ export const Styles = styled.div`
         select {
           padding: 15px 30px;
           cursor: pointer;
+          width: 100%;
+        }
+      }
+      @media (max-width: 820px) {
         grid-template-columns: 1fr;
       }
     }

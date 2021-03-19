@@ -29,29 +29,29 @@ const ProfileCard = ({ handleOpenProfile, userProfile }) => {
         <Flex flexDir="column" className="location-details">
           <Grid flexDir="column" gap="0">
             {userProfile.city?.length > 0 ? (
-              <Flex justify="flex-start" margin="5px 0">
+              <Flex justify="flex-start" margin="5px 0" align='baseline' flexWrap='nowrap'>
                 <Flex width="max-content">
                   <CityIcon width="15px" height="15px" color="#673a1e" />
                 </Flex>
-                <Span color="#673a1e"> {userProfile.city}</Span>
+                <Span color="#673a1e" align='start'> {userProfile.city}</Span>
               </Flex>
             ) : null}
 
             {userProfile.phone?.length > 0 ? (
-              <Flex justify="flex-start" margin="5px 0">
+              <Flex justify="flex-start" margin="5px 0" align='baseline' flexWrap='nowrap'>
                 <Flex width="max-content">
                   <PhoneIcon width="15px" height="15px" color="#673a1e" />
                 </Flex>
-                <Span color="#673a1e"> {userProfile.phone}</Span>
+                <Span color="#673a1e" align='start'> {userProfile.phone}</Span>
               </Flex>
             ) : null}
 
             {userProfile.Address?.length > 0 ? (
-              <Flex justify="flex-start" margin="5px 0">
+              <Flex justify="flex-start" margin="5px 0" align='baseline' flexWrap='nowrap'>
                 <Flex width="max-content">
                   <LocationIcon width="16px" height="16px" color="#673a1e" />
                 </Flex>
-                <Span color="#673a1e"> {userProfile.Address}</Span>
+                <Span color="#673a1e" align='start'> {userProfile.Address}</Span>
               </Flex>
             ) : null}
           </Grid>
