@@ -12,11 +12,7 @@ const useLocalStorageHook = (initialValue = "storedItem") => {
 
   // set setState to a new item passed in as props
   const setStorage = (item = null) => {
-    let strippedStr = item;
-    let newItem = localStorage.setItem(
-      initialValue,
-      JSON.stringify(strippedStr)
-    );
+    let newItem = localStorage.setItem(initialValue, JSON.stringify(item));
     return setState(newItem);
   };
 

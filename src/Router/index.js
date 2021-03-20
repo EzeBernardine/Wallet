@@ -13,6 +13,7 @@ import BuyAirtime from "../../src/components/pages/Dashboard/buyAirtime";
 import Transactions from "../../src/components/pages/Dashboard/Transactions";
 import { isLogin } from "../lib/islogin";
 
+
 const Error = () => {
   return <p>404 page</p>;
 };
