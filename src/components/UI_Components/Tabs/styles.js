@@ -9,7 +9,7 @@ export const TabWrapper = styled("div")`
     border-radius: 4px;
     height: auto;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     transition: background 0.3s ease-out;
     overflow-x: auto;
     scrollbar-color: #e3e3e3 transparent;

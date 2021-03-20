@@ -72,7 +72,7 @@ const ConfirmPassword = ({
               {/* create an Validation for each password  with props of label and boolean of state */}
               <Flex flexDir="column" align="flex-start" margin='10px 0'>
                 <Bold color={"#de8430"} size="14px">
-                  Pass must match the following confditions
+                  Password must meet the following conditions
                 </Bold>
               </Flex>
               <ul className="validation-container">

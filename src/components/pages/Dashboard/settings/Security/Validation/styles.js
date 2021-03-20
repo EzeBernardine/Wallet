@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const Styles = styled.div`
   position: relative;
-  width: 15em;
-  padding: 5px 0;
+  width: 300px;
   border-bottom: 1px solid #fbe8dd;
+  padding: 10px 20px;
 
   > li {
     position: relative;
@@ -26,5 +26,8 @@ export const Styles = styled.div`
         "1px solid  " + (matched ? " #de8430" : "#918e8c")};
       background: ${({ matched }) => (matched ? " #de8430" : "transaprent")};
     }
+  }
+  :last-child {
+    border: none;
   }
 `;
