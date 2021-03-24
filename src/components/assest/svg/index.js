@@ -1332,8 +1332,3 @@ export const ArrowDownIcon = ({ width, height, color }) => (
 //     height={height || 52}
 //     fill={color || 'currentColor'}
 // );
-
-//     width={width || 52}
-//     height={height || 52}
-//     fill={color || 'currentColor'}
-// );
