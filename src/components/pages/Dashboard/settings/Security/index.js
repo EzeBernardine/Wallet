@@ -1,18 +1,18 @@
 import { Styles } from "./styles";
 import { Flex, Grid } from "../../../../UI_Components/Box/styles";
-import { Span, Paragraph } from "../../../../UI_Components/FontSize/styles";
+import { Paragraph } from "../../../../UI_Components/FontSize/styles";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
 import { InputStyles } from "../../../../UI_Components/Input/styles";
-import API from "../../../../../lib/api";
-import useLocalStorageHook from "../../../../../lib/customHook";
-import { useState, useEffect } from "react";
+// import API from "../../../../../lib/api";
+// import useLocalStorageHook from "../../../../../lib/customHook";
+import { useState } from "react";
 import ComfirmPassword from "./ConfirmPassword";
 
 const Profile = () => {
   const [oldPassword, setOldPassword] = useState(true);
-  const { state: token } = useLocalStorageHook("token");
-  
+  // const { state: token } = useLocalStorageHook("token");
+
   // form inputs
   const [createPassword, setCreatePassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -51,12 +51,12 @@ const Profile = () => {
   // handles all validation states
   const validatePassword = () => {
     // has uppercase letter
-    if (createPassword.toLowerCase() != createPassword)
+    if (createPassword.toLowerCase() !== createPassword)
       setValidation((prev) => ({ ...prev, containsUL: true }));
     else setValidation((prev) => ({ ...prev, containsUL: false }));
 
     // has lowercase letter
-    if (createPassword.toUpperCase() != createPassword)
+    if (createPassword.toUpperCase() !== createPassword)
       setValidation((prev) => ({ ...prev, containsLL: true }));
     else setValidation((prev) => ({ ...prev, containsLL: false }));
 
@@ -66,7 +66,8 @@ const Profile = () => {
     else setValidation((prev) => ({ ...prev, containsN: false }));
 
     // has special character
-    if (/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(createPassword))
+    // if (/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(createPassword))
+    if (/[~`!#$%&*+=\-\]\\';,/{}|\\":<>]/g.test(createPassword))
       setValidation((prev) => ({ ...prev, containsSC: true }));
     else setValidation((prev) => ({ ...prev, containsSC: false }));
 

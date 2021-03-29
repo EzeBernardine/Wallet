@@ -31,7 +31,7 @@ const Login = () => {
 
         {loginStaus?.length > 0 && (
           <Flex margin="20px auto 0" maxWidth="600px" justify="flex-start">
-            <Alert type="error" >
+            <Alert type="error">
               <Paragraph>{loginStaus}</Paragraph>
             </Alert>
           </Flex>
@@ -53,15 +53,15 @@ const Login = () => {
               })
                 .then((res) => {
                   setState(res.data.token);
-                  setLoginStaus('');
-                  history.push("./dashboard");
+                  setLoginStaus("");
+                  console.log(res, "ssssssssssssssssssss");
+                  return history.push("./dashboard");
                 })
                 .catch((err) => {
-                  setLoginStaus('');
+                  setLoginStaus("");
+                  console.log(err, "rrrrrrrrrrrr");
                   setLoginStaus(err.response.data.message);
                 });
-
-                
             }}
           >
             {({ handleChange, values: { username, password } }) => (

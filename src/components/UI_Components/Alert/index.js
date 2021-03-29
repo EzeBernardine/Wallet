@@ -2,7 +2,7 @@ import { Styles } from "./styles";
 import { AlertIcon, SuccessIcon } from "../../assest/svg";
 import { useEffect, useState } from "react";
 
-const Alert = ({ type, duration = 3000, reCall, children }) => {
+const Alert = ({ type, duration = 3000, children }) => {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {

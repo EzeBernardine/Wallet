@@ -1,8 +1,6 @@
 import { Styles } from "./styles";
 import { Flex } from "../../../UI_Components/Box/styles";
 import { Header5 } from "../../../UI_Components/FontSize/styles";
-// import { Formik, Form, Field, ErrorMessage } from "formik";
-// import * as yup from "yup";
 import Layout from "../../../UI_Components/Layout";
 import Tabs from "../../../UI_Components/Tabs";
 import { useState } from "react";
