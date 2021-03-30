@@ -8,7 +8,6 @@ import Profile from "./Profile";
 import Notifications from "./Notifications";
 import Security from "./Security";
 import AccountVerification from "./AccountVerification";
-import { generateID } from "../../../../lib/generateID";
 
 const Settings = () => {
   const [, setTabType] = useState("Profile Update");
@@ -24,16 +23,16 @@ const Settings = () => {
 
         <Tabs click={(tab) => setTabType(tab)}>
           <div label="Profile">
-            <Profile key={generateID(15)} />
+            <Profile />
           </div>
           <div label="Security">
-            <Security key={generateID(15)} />
+            <Security />
           </div>
           <div label="Account Verification">
-            <AccountVerification key={generateID(15)} />
+            <AccountVerification />
           </div>
           <div label="Notification">
-            <Notifications key={generateID(15)} />
+            <Notifications />
           </div>
         </Tabs>
       </Styles>

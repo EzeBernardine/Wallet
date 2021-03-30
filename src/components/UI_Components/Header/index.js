@@ -25,7 +25,7 @@ const Header = () => {
     localStorage.removeItem("token");
     history.push("/login");
   };
-  const handleOpenProfile = (bolean) => setOpendProfile(bolean);
+
   const getCurrentUserProfile = async () => {
     await API.get("user/myprofile", {
       headers: { Authorization: `${token.replace(/['"]+/g, "")}` },
@@ -44,7 +44,7 @@ const Header = () => {
 
   useEffect(() => {
     getCurrentUserProfile();
-  }, []);
+  });
   return (
     <Styles className="App">
       <Flex margin="0 0 0 0" justify="space-between" height="100%">
@@ -65,7 +65,7 @@ const Header = () => {
               height="40px"
               width="40px"
               className="image"
-              onClick={() => handleOpenProfile(true)}
+              onClick={() => setOpendProfile(true)}
             >
               <img src={Avatar} alt={userProfile.username} />
             </Frame>
@@ -74,11 +74,11 @@ const Header = () => {
               <Flex className="modal">
                 <div
                   className="overlay"
-                  onClick={() => handleOpenProfile(false)}
+                  onClick={() => setOpendProfile(false)}
                 ></div>
 
                 <ProfileCard
-                  handleOpenProfile={handleOpenProfile}
+                  setOpendProfile={setOpendProfile}
                   userProfile={userProfile}
                 />
               </Flex>

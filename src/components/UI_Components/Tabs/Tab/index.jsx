@@ -1,5 +1,6 @@
 import React from "react";
 import propTypes from "prop-types";
+import { generateID } from "../../../../lib/generateID";
 
 const Tab = ({ activeTab, label, onClick }) => {
   const onClickTab = () => onClick(label);
@@ -10,7 +11,7 @@ const Tab = ({ activeTab, label, onClick }) => {
 
   return (
     <>
-      <li className={className} onClick={onClickTab} >
+      <li className={className} onClick={onClickTab} key={generateID(15)}>
         {label}
       </li>
     </>

@@ -24,21 +24,19 @@ const Tabs = ({ click, children }) => {
         {children.map((child) => {
           const { label } = child.props;
           return (
-            <>
-              <Tab
-                activeTab={activeTab}
-                key={generateID(15)}
-                label={label}
-                onClick={onClickTabItem}
-              />
-            </>
+            <Tab
+              activeTab={activeTab}
+              key={generateID(15)}
+              label={label}
+              onClick={onClickTabItem}
+            />
           );
         })}
       </ol>
       <div className="tab-content">
         {children.map((child) => {
           if (child.props.label !== activeTab) return undefined;
-          return child.props.children;
+          return <div key={generateID(15)}>{child.props.children}</div>;
         })}
       </div>
     </TabWrapper>

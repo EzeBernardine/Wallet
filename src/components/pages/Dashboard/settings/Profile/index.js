@@ -33,7 +33,7 @@ const Profile = () => {
 
   useEffect(() => {
     getCurrentUserData();
-  }, []);
+  });
   return (
     <Styles className="App">
       <Formik

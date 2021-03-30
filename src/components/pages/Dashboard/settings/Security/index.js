@@ -10,7 +10,7 @@ import { useState } from "react";
 import ComfirmPassword from "./ConfirmPassword";
 
 const Profile = () => {
-  const [oldPassword, setOldPassword] = useState(true);
+  const [oldPassword] = useState(true);
   // const { state: token } = useLocalStorageHook("token");
 
   // form inputs
@@ -97,22 +97,6 @@ const Profile = () => {
   const validationSchema_oldPassword = yup.object().shape({
     oldpassword: yup.string().min(8).required("Incorrect password"),
   });
-
-  // const getOldPassword = async () => {
-  //   await API.get("user/myprofile", {
-  //     headers: { Authorization: `${token.replace(/['"]+/g, "")}` },
-  //   })
-  //     .then(({ data }) => {
-  //       console.log(data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
-  // useEffect(() => {
-  //   // getOldPassword()
-  // }, []);
 
   return (
     <Styles className="App">

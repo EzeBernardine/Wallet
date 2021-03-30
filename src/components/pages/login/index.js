@@ -54,12 +54,10 @@ const Login = () => {
                 .then((res) => {
                   setState(res.data.token);
                   setLoginStaus("");
-                  console.log(res, "ssssssssssssssssssss");
                   return history.push("./dashboard");
                 })
                 .catch((err) => {
                   setLoginStaus("");
-                  console.log(err, "rrrrrrrrrrrr");
                   setLoginStaus(err.response.data.message);
                 });
             }}
