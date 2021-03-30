@@ -29,29 +29,50 @@ const ProfileCard = ({ setOpendProfile, userProfile }) => {
         <Flex flexDir="column" className="location-details">
           <Grid flexDir="column" gap="0">
             {userProfile.city?.length > 0 ? (
-              <Flex justify="flex-start" margin="5px 0" align='baseline' flexWrap='nowrap'>
-                <Flex width="max-content">
+              <Flex
+                justify="flex-start"
+                margin="5px 0"
+                align="baseline"
+                flexWrap="nowrap"
+              >
+                <Flex width="1px" minWidth="15px">
                   <CityIcon width="15px" height="15px" color="#673a1e" />
                 </Flex>
-                <Span color="#673a1e" align='start'> {userProfile.city}</Span>
+                <Span color="#673a1e" align="start">
+                  {userProfile.city}
+                </Span>
               </Flex>
             ) : null}
 
             {userProfile.phone?.length > 0 ? (
-              <Flex justify="flex-start" margin="5px 0" align='baseline' flexWrap='nowrap'>
-                <Flex width="max-content">
+              <Flex
+                justify="flex-start"
+                margin="5px 0"
+                align="baseline"
+                flexWrap="nowrap"
+              >
+                <Flex width="1px" minWidth="15px">
                   <PhoneIcon width="15px" height="15px" color="#673a1e" />
                 </Flex>
-                <Span color="#673a1e" align='start'> {userProfile.phone}</Span>
+                <Span color="#673a1e" align="start">
+                  {userProfile.phone}
+                </Span>
               </Flex>
             ) : null}
 
             {userProfile.Address?.length > 0 ? (
-              <Flex justify="flex-start" margin="5px 0" align='baseline' flexWrap='nowrap'>
-                <Flex width="max-content">
+              <Flex
+                justify="flex-start"
+                margin="5px 0"
+                align="baseline"
+                flexWrap="nowrap"
+              >
+                <Flex width="16px" minWidth="16px">
                   <LocationIcon width="16px" height="16px" color="#673a1e" />
                 </Flex>
-                <Span color="#673a1e" align='start'> {userProfile.Address}</Span>
+                <Span color="#673a1e" align="start">
+                  {userProfile.Address}
+                </Span>
               </Flex>
             ) : null}
           </Grid>

@@ -15,7 +15,7 @@ const Profile = () => {
     username: yup.string().min(2),
     city: yup.string().min(2),
     phone: yup.number().min(10),
-    Address: yup.string().min(10),
+    Address: yup.string().min(10).max(100),
   });
   const { state: token } = useLocalStorageHook("token");
   const [currentUser, setCurrentUser] = useState("");

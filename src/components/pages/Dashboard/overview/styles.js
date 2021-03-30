@@ -24,7 +24,7 @@ export const Styles = styled.div`
         margin: auto;
         content: "";
       }
-      @media (max-width: 980px) {
+      @media (max-width: 1015px) {
         margin: 30px 0 0 0
       }
     }

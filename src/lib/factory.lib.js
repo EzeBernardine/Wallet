@@ -1,4 +1,4 @@
-import moment from 'moment';
+import moment from "moment";
 
 /**
  * Truncate
@@ -106,4 +106,11 @@ export function isNotEmpty(obj) {
   }
 
   return false;
+}
+
+/**
+ *extractInThrees returns an array of strins splitted in threes
+ */
+export function extractInThrees(str) {
+  return str.match(/.{1,4}/g);
 }
