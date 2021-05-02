@@ -34,10 +34,10 @@ const Overview = () => {
     <Layout>
       <Styles className="App">
         <Flex justify="flex-start" margin="0 0 0 0" className="warning">
-          <Alert>
+          <Alert duration={10000}>
             <Span>
               Hello Anonymous, your wallet is very low at the moment, try fund
-              it
+              it.
             </Span>
           </Alert>
         </Flex>

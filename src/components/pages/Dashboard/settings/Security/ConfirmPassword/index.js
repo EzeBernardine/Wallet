@@ -6,9 +6,9 @@ import {
   Header4,
 } from "../../../../../UI_Components/FontSize/styles";
 import { InputStyles } from "../../../../../UI_Components/Input/styles";
-// import API from "../../../../../../lib/api";
-// import useLocalStorageHook from "../../../../../../lib/customHook";
-// import { useState, useEffect } from "react";
+import API from "../../../../../../lib/api";
+import useLocalStorageHook from "../../../../../../lib/customHook";
+import { useState, useEffect } from "react";
 import Validation from "../Validation";
 import { generateID } from "../../../../../../lib/generateID";
 
@@ -21,6 +21,25 @@ const ConfirmPassword = ({
   validationChecks,
   allValid,
 }) => {
+  const { state: token } = useLocalStorageHook("token");
+
+  const handleChangePassword = (e) => {
+    e.preventDefault();
+
+    API.post(
+      "user/change-password",
+      { confirmPassword },
+      {
+        headers: {
+          Authorization: `${token.replace(/['"]+/g, "")}`,
+        },
+      }
+    )
+      .then((res) => console.log(res))
+      .catch((error) => console.log(error));
+
+  };
+
   return (
     <Styles className="App">
       <form>
@@ -35,42 +54,40 @@ const ConfirmPassword = ({
             <Flex width="calc( 50% - 10px )">
               <Flex className="input-wrap" flexDir="column" align="stretch">
                 <label htmlFor="password">Create Password</label>
-                <InputStyles>
-                  <input
-                    type="text"
-                    name="password"
-                    placeholder="text"
-                    id="password"
-                    value={createPassword}
-                    onChange={(e) => setCreatePassword(e.target.value)}
-                    onKeyUp={validatePassword}
-                  />
-                </InputStyles>
+
+                <input
+                  type="text"
+                  name="password"
+                  placeholder="text"
+                  id="password"
+                  value={createPassword}
+                  onChange={(e) => setCreatePassword(e.target.value)}
+                  onKeyUp={validatePassword}
+                />
               </Flex>
             </Flex>
 
             <Flex width="calc( 50% - 10px )">
               <Flex className="input-wrap" flexDir="column" align="stretch">
                 <label htmlFor="confirmpassword">Confirm Password</label>
-                <InputStyles>
-                  <input
-                    type="text"
-                    name="confirmpassword"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    onKeyUp={validatePassword}
-                    placeholder="password"
-                    id="confirmpassword"
-                  />
-                </InputStyles>
+
+                <input
+                  type="text"
+                  name="confirmpassword"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  onKeyUp={validatePassword}
+                  placeholder="password"
+                  id="confirmpassword"
+                />
               </Flex>
             </Flex>
           </Flex>
 
-          {(!allValid && createPassword.length > 0)? (
+          {!allValid && createPassword.length > 0 ? (
             <Flex flexDir="column" align="flex-start">
               {/* create an Validation for each password  with props of label and boolean of state */}
-              <Flex flexDir="column" align="flex-start" margin='10px 0'>
+              <Flex flexDir="column" align="flex-start" margin="10px 0">
                 <Bold color={"#de8430"} size="14px">
                   Password must meet the following conditions
                 </Bold>
@@ -87,7 +104,11 @@ const ConfirmPassword = ({
           {/* ------------------button section-------------- */}
           {allValid ? (
             <Flex className="btn" justify="flex-end" margin="23px 0 0 0">
-              <button type="submit" padding="15px 30px" onClick={() => []}>
+              <button
+                type="submit"
+                padding="15px 30px"
+                onClick={handleChangePassword}
+              >
                 <Flex>
                   <Span lineHeight="15px" color={"#fff"} className="drawerText">
                     Change Password
