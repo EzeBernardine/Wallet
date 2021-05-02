@@ -5,10 +5,10 @@ import {
   Bold,
   Header4,
 } from "../../../../../UI_Components/FontSize/styles";
-import { InputStyles } from "../../../../../UI_Components/Input/styles";
+// import { InputStyles } from "../../../../../UI_Components/Input/styles";
 import API from "../../../../../../lib/api";
 import useLocalStorageHook from "../../../../../../lib/customHook";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import Validation from "../Validation";
 import { generateID } from "../../../../../../lib/generateID";
 
@@ -37,7 +37,6 @@ const ConfirmPassword = ({
     )
       .then((res) => console.log(res))
       .catch((error) => console.log(error));
-
   };
 
   return (

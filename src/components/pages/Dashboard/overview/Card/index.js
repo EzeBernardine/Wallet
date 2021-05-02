@@ -21,31 +21,31 @@ const Card = () => {
     amount: 0,
   });
 
-  const getUserCardDetails = () => {
-    API.get("user/myprofile", {
-      headers: { Authorization: `${token.replace(/['"]+/g, "")}` },
-    })
-      .then(({ data }) => {
-        setCardDetials((prev) => ({
-          ...prev,
-          accountName: data.data.username,
-          accountNumber: extractInThrees(data.data._id.substring(0, 16)),
-        }));
-      })
-      .catch((res) => console.log(res));
-
-    // API.get("user/getuser", {
-    //   headers: { Authorization: `${token.replace(/['"]+/g, "")}` },
-    // })
-    //   .then(({ data }) => {
-    //     console.log(data);
-    //   })
-    //   .catch((res) => console.log(res));
-  };
-
+  
   useEffect(() => {
+    const getUserCardDetails = () => {
+      API.get("user/myprofile", {
+        headers: { Authorization: `${token.replace(/['"]+/g, "")}` },
+      })
+        .then(({ data }) => {
+          setCardDetials((prev) => ({
+            ...prev,
+            accountName: data.data.username,
+            accountNumber: extractInThrees(data.data._id.substring(0, 16)),
+          }));
+        })
+        .catch((res) => console.log(res));
+  
+      // API.get("user/getuser", {
+      //   headers: { Authorization: `${token.replace(/['"]+/g, "")}` },
+      // })
+      //   .then(({ data }) => {
+      //     console.log(data);
+      //   })
+      //   .catch((res) => console.log(res));
+    };
     getUserCardDetails();
-  }, []);
+  }, [token]);
   return (
     <Styles className="App">
       <Flex className="balance" align="flex-start" maxWidth="350px">
