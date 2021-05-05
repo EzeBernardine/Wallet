@@ -23,10 +23,11 @@ const BuyAirtime = () => {
   });
 
   const networks = {
-    'Airtel': Airtel,
-    'GLO': GLO,
-    "9mobile": Mobile,
-    'MTN': MTN,
+    Airtel: Airtel,
+    GLO: GLO,
+    Mobile: Mobile,
+    MTN: MTN,
+    "": MTN,
   };
 
   return (
@@ -89,24 +90,9 @@ const BuyAirtime = () => {
                     <InputStyles>
                       {network ? (
                         <Frame width="20px" height="20px" className="frame">
-                          <img
-                            src={
-                              network === "Airtel"
-                                ? Airtel
-                                : network === "GLO"
-                                ? GLO
-                                : network === "9mobile"
-                                ? Mobile
-                                : network === "MTN"
-                                ? MTN
-                                : ""
-                            }
-                            alt="mtn"
-                          />
+                          <img src={networks[network]} alt={network} />
                         </Frame>
-                      ) : (
-                        ""
-                      )}
+                      ) : null}
                       <Field
                         as="select"
                         name="network"
@@ -117,7 +103,7 @@ const BuyAirtime = () => {
                         <option value="MTN">MTN</option>
                         <option value="Airtel">Airtel</option>
                         <option value="GLO">GLO</option>
-                        <option value="9mobile">9mobile</option>
+                        <option value="Mobile">9mobile</option>
                       </Field>
                       <ArrowDownIcon
                         width="15px"
