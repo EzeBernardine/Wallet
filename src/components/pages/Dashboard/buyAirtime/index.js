@@ -22,6 +22,13 @@ const BuyAirtime = () => {
     network: yup.string().required("Select an option"),
   });
 
+  const networks = {
+    'Airtel': Airtel,
+    'GLO': GLO,
+    "9mobile": Mobile,
+    'MTN': MTN,
+  };
+
   return (
     <Layout>
       <Styles className="App">

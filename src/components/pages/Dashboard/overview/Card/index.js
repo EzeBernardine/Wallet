@@ -21,7 +21,6 @@ const Card = () => {
     amount: 0,
   });
 
-  
   useEffect(() => {
     const getUserCardDetails = () => {
       API.get("user/myprofile", {
@@ -35,7 +34,7 @@ const Card = () => {
           }));
         })
         .catch((res) => console.log(res));
-  
+
       // API.get("user/getuser", {
       //   headers: { Authorization: `${token.replace(/['"]+/g, "")}` },
       // })
