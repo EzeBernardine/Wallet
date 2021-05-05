@@ -27,7 +27,6 @@ const BuyAirtime = () => {
     GLO: GLO,
     Mobile: Mobile,
     MTN: MTN,
-    "": MTN,
   };
 
   return (
@@ -88,7 +87,7 @@ const BuyAirtime = () => {
                       Select your service provider
                     </label>
                     <InputStyles>
-                      {network ? (
+                      {network && networks[network] ? (
                         <Frame width="20px" height="20px" className="frame">
                           <img src={networks[network]} alt={network} />
                         </Frame>
